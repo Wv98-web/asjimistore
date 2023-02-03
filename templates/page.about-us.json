@@ -1,0 +1,157 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "8832c16d-c682-406d-bee9-20100fea1d7e": {
+      "type": "image-banner",
+      "blocks": {
+        "template--15948325814472__8832c16d-c682-406d-bee9-20100fea1d7e-16700976677fae3a1d-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "من هنا بدأت قصتنا",
+            "heading_size": "h1"
+          }
+        },
+        "template--15948325814472__8832c16d-c682-406d-bee9-20100fea1d7e-16700976677fae3a1d-1": {
+          "type": "text",
+          "settings": {
+            "text": "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "template--15948325814472__8832c16d-c682-406d-bee9-20100fea1d7e-16700976677fae3a1d-0",
+        "template--15948325814472__8832c16d-c682-406d-bee9-20100fea1d7e-16700976677fae3a1d-1"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/About_1.jpg",
+        "image_overlay_opacity": 30,
+        "image_height": "medium",
+        "adapt_height_first_image": false,
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "50e08a27-bfd1-4e9b-93bd-277cdddbd8f0": {
+      "type": "rich-text",
+      "blocks": {
+        "template--15948325814472__50e08a27-bfd1-4e9b-93bd-277cdddbd8f0-1670097741c2ab2c7a-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>من نحن<\/p>",
+            "heading_size": "h1"
+          }
+        },
+        "template--15948325814472__50e08a27-bfd1-4e9b-93bd-277cdddbd8f0-1670097741c2ab2c7a-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p><br\/>هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غير منظم، غير منسق، أو حتى غير مفهوم. لأنه مازال نصاً بديلاً ومؤقتاً.<br\/><br\/>من هنا وجب على المصمم أن يضع نصوصا مؤقتة على التصميم ليظهر للعميل الشكل كاملاً،دور مولد النص العربىأن يوفر على المصمم عناء البحث عن نص بديل لا علاقة له بالموضوع الذى يتحدث عنه التصميم فيظهر بشكل لا يليق.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--15948325814472__50e08a27-bfd1-4e9b-93bd-277cdddbd8f0-1670097741c2ab2c7a-0",
+        "template--15948325814472__50e08a27-bfd1-4e9b-93bd-277cdddbd8f0-1670097741c2ab2c7a-1"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "39e03207-7bcd-4e2b-9113-fddd4799fe15": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--15948325814472__39e03207-7bcd-4e2b-9113-fddd4799fe15-167009774102653df4-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "هذا النص هو مثال لنص",
+            "heading_size": "h1"
+          }
+        },
+        "template--15948325814472__39e03207-7bcd-4e2b-9113-fddd4799fe15-167009774102653df4-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص<\/p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "template--15948325814472__39e03207-7bcd-4e2b-9113-fddd4799fe15-167009774102653df4-0",
+        "template--15948325814472__39e03207-7bcd-4e2b-9113-fddd4799fe15-167009774102653df4-1"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/About_2.jpg",
+        "height": "large",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "center",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "047ce62d-976b-4bac-a947-4063ed391c2a": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--15948325814472__047ce62d-976b-4bac-a947-4063ed391c2a-167009774102653df4-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "هذا النص هو مثال لنص",
+            "heading_size": "h1"
+          }
+        },
+        "template--15948325814472__047ce62d-976b-4bac-a947-4063ed391c2a-167009774102653df4-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص<\/p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "template--15948325814472__047ce62d-976b-4bac-a947-4063ed391c2a-167009774102653df4-0",
+        "template--15948325814472__047ce62d-976b-4bac-a947-4063ed391c2a-167009774102653df4-1"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/About_3.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "center",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "8832c16d-c682-406d-bee9-20100fea1d7e",
+    "50e08a27-bfd1-4e9b-93bd-277cdddbd8f0",
+    "39e03207-7bcd-4e2b-9113-fddd4799fe15",
+    "047ce62d-976b-4bac-a947-4063ed391c2a"
+  ]
+}

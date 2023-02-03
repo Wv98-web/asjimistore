@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Almarai&display=swap');
+
+body, h1, h2, h3, h4, h5, h6, p, blockquote, li, a, *:not(.fa):not([class*="pe-"]):not(.lni) {
+  font-family: 'Almarai' !important;letter-spacing:0!important;
+}
+
+body, html {
+  direction: rtl
+}
+
+.icon-arrow {
+    transform: scaleX(-1);
+}
+
+.card-information, .card__information {
+    text-align: right!important;
+}
+
+.toolbar-icons .doubly-wrapper {
+    float: left!important;
+    margin-left: 0!important;
+}
+
+.toolbar-icons .doubly-nice-select {
+    float: left!important;
+	border: 0px!important;
+    padding-right: 12px!important;
+    padding-left: 30px!important;
+    text-align: right!important;
+}
+
+.toolbar-icons .flags {
+    margin: 10px 0 0 4px !important;
+    float: right!important;
+}
+
+.toolbar-icons .doubly-nice-select.right .list {
+    right: auto!important;
+    left: 0!important;
+  	overflow: hidden!important;
+}
+
+.toolbar-icons .doubly-nice-select .option {
+    text-align: right !important;
+    padding-right: 18px!important;
+    padding-left: 52px!important;
+    text-align: right!important;
+}
+
+.toolbar-icons .doubly-nice-select:after {
+    left: 0px!important;
+    right: 90px!important;
+}
+
+button.shopify-payment-button__button {
+font-size: 0px !important;
+}
+
+button.shopify-payment-button__button:before {
+	content: "اشترِ الآن";
+    font-size: 16px;
+    padding: 9px 1.4em;
+    min-height: 44px;    
+  
+}    
+
+.currency-selector .doubly-wrapper {
+    float: left!important;
+    margin-left: 0!important;
+}
+
+.doubly-wrapper {
+  float: left!important;
+  margin-left: 18px;
+  margin-right: 0;
+}
+
+.currency-selector .doubly-nice-select {
+	float: left!important;
+    border: 0px!important;
+    padding-right: 10px!important;
+    padding-left: 18px!important;
+    background: none;
+ 	height: unset;
+    line-height: 40px!important;
+}
+
+.currency-selector .flags {
+    margin: 0 0 0 4px!important;
+    float: right!important;
+}
+
+.currency-selector .doubly-nice-select.right .list {
+	right: auto!important;
+    left: 0!important;
+}
+
+.currency-selector .doubly-nice-select .option {
+	padding-right: 18px!important;
+    padding-left: 18px!important;
+    text-align: right!important;
+}
+
+.currency-selector .doubly-nice-select:after {
+    left: 0px!important;
+    right: 53px!important;
+    height: 4px;
+    right: 14px;
+    top: 7px;
+    width: 4px; 
+}
+
+.footer__copyright {
+    text-align: center!important;
+}

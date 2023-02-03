@@ -1,0 +1,65 @@
+.currency-selector .doubly-nice-select {
+    border: 0px!important;
+    background: none;
+ 	height: unset;
+    line-height: 40px!important;
+}
+
+.currency-selector .flags {
+    display: none;
+}
+
+.currency-selector .doubly-nice-select.right .list {
+  	overflow: hidden!important;
+}
+
+.currency-selector .doubly-nice-select .option {
+	padding-right: 18px!important;
+    padding-left: 18px!important;
+}
+
+.currency-selector .doubly-nice-select:after {
+ 	border-bottom: 1.5px solid rgb(var(--color-foreground));
+    border-right: 1.5px solid rgb(var(--color-foreground));
+    height: 4px;
+    top: 16px!important;
+    width: 4px; 
+  	right: 6px;
+}
+  
+.doubly-nice-select.right {
+  	padding-left: 5px;
+    padding-right: 20px;
+  	top: 2px;
+}
+
+.doubly-wrapper {
+    margin-right: 10px;
+}
+
+.announcement-bar__message {
+    color: rgb(var(--color-foreground));
+    color: #fff;
+}
+
+.header-localization form {
+    margin: 0!important;
+    padding: 0!important;
+}
+
+.header-localization .localization-form__select:after {
+    border: 0!important;
+    box-shadow: none!important;
+}
+
+.header-localization .localization-form:only-child .localization-form__select {
+    margin: 0!important;
+}
+
+.slider-counter {
+    display: none!important;
+}
+
+.footer__copyright {
+    text-align: center;
+}

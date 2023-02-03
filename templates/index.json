@@ -1,0 +1,362 @@
+{
+  "sections": {
+    "image_banner": {
+      "type": "image-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "هذا النص هو مثال لنص",
+            "heading_size": "h0"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة",
+            "text_style": "body"
+          }
+        },
+        "button": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "تسوق",
+            "button_link_1": "shopify:\/\/collections\/all",
+            "button_style_secondary_1": true,
+            "button_label_2": "المزيد",
+            "button_link_2": "#",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text",
+        "button"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Hero.jpg",
+        "image_overlay_opacity": 40,
+        "image_height": "medium",
+        "adapt_height_first_image": false,
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "rich_text": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>تحدث عن علامتك التجارية<\/p>",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>استخدم هذا النص لمشاركة المعلومات حول علامتك التجارية مع عملائك. وصف منتج أو إعلانات مشاركة أو الترحيب بالعملاء في متجرك.<\/p>"
+          }
+        },
+        "a337c4e8-0cf9-402a-be55-933f5f5a46c0": {
+          "type": "button",
+          "settings": {
+            "button_label": "من نحن",
+            "button_link": "#",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text",
+        "a337c4e8-0cf9-402a-be55-933f5f5a46c0"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "3afa7ea6-6a47-4ae8-8ac7-911bee7c417a": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--15948283510984__3afa7ea6-6a47-4ae8-8ac7-911bee7c417a-1670083980f31ce2bd-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "تحدث عن علامتك التجارية",
+            "heading_size": "h1"
+          }
+        },
+        "template--15948283510984__3afa7ea6-6a47-4ae8-8ac7-911bee7c417a-1670083980f31ce2bd-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>استخدم هذا النص لمشاركة المعلومات حول علامتك التجارية مع عملائك. وصف منتج أو إعلانات مشاركة أو الترحيب بالعملاء في متجرك.<\/p>",
+            "text_style": "body"
+          }
+        },
+        "template--15948283510984__3afa7ea6-6a47-4ae8-8ac7-911bee7c417a-1670083980f31ce2bd-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "تفاصيل أكثر",
+            "button_link": "#"
+          }
+        }
+      },
+      "block_order": [
+        "template--15948283510984__3afa7ea6-6a47-4ae8-8ac7-911bee7c417a-1670083980f31ce2bd-0",
+        "template--15948283510984__3afa7ea6-6a47-4ae8-8ac7-911bee7c417a-1670083980f31ce2bd-1",
+        "template--15948283510984__3afa7ea6-6a47-4ae8-8ac7-911bee7c417a-1670083980f31ce2bd-2"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/About_2.jpg",
+        "height": "small",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "center",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "6c5f181f-0666-45ea-a6dc-717104e1244c": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--15948283510984__6c5f181f-0666-45ea-a6dc-717104e1244c-1670083980f31ce2bd-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "تحدث عن علامتك التجارية",
+            "heading_size": "h1"
+          }
+        },
+        "template--15948283510984__6c5f181f-0666-45ea-a6dc-717104e1244c-1670083980f31ce2bd-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>استخدم هذا النص لمشاركة المعلومات حول علامتك التجارية مع عملائك. وصف منتج أو إعلانات مشاركة أو الترحيب بالعملاء في متجرك.<\/p>",
+            "text_style": "body"
+          }
+        },
+        "template--15948283510984__6c5f181f-0666-45ea-a6dc-717104e1244c-1670083980f31ce2bd-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "تفاصيل أكثر",
+            "button_link": "#"
+          }
+        }
+      },
+      "block_order": [
+        "template--15948283510984__6c5f181f-0666-45ea-a6dc-717104e1244c-1670083980f31ce2bd-0",
+        "template--15948283510984__6c5f181f-0666-45ea-a6dc-717104e1244c-1670083980f31ce2bd-1",
+        "template--15948283510984__6c5f181f-0666-45ea-a6dc-717104e1244c-1670083980f31ce2bd-2"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/About_3.jpg",
+        "height": "small",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "center",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "a8a2bcbf-1fb1-4aa5-a612-ce3286828f87": {
+      "type": "collection-list",
+      "blocks": {
+        "template--15948283510984__a8a2bcbf-1fb1-4aa5-a612-ce3286828f87-1670083637acfd4dbf-0": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "accessories"
+          }
+        },
+        "template--15948283510984__a8a2bcbf-1fb1-4aa5-a612-ce3286828f87-1670083637acfd4dbf-1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "suitcases"
+          }
+        },
+        "template--15948283510984__a8a2bcbf-1fb1-4aa5-a612-ce3286828f87-1670083637acfd4dbf-2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "jeans"
+          }
+        },
+        "0344af95-778c-43e0-9275-f5340fa9b197": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "dresses"
+          }
+        },
+        "56e2749f-7f26-4c09-b702-136f20bb62d3": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "tshirt"
+          }
+        }
+      },
+      "block_order": [
+        "template--15948283510984__a8a2bcbf-1fb1-4aa5-a612-ce3286828f87-1670083637acfd4dbf-0",
+        "template--15948283510984__a8a2bcbf-1fb1-4aa5-a612-ce3286828f87-1670083637acfd4dbf-1",
+        "template--15948283510984__a8a2bcbf-1fb1-4aa5-a612-ce3286828f87-1670083637acfd4dbf-2",
+        "0344af95-778c-43e0-9275-f5340fa9b197",
+        "56e2749f-7f26-4c09-b702-136f20bb62d3"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_ratio": "adapt",
+        "columns_desktop": 5,
+        "color_scheme": "background-1",
+        "show_view_all": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "collage": {
+      "type": "collage",
+      "blocks": {
+        "6320ccd1-c4c4-4aa7-bdaa-393cf4b23362": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Gallery_1.jpg",
+            "image_padding": false
+          }
+        },
+        "2c3f1e7b-e863-4776-aabd-3e3a787846df": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Gallery_2.jpg",
+            "image_padding": false
+          }
+        },
+        "e8d7de23-29df-46d5-8206-0eed8062c8ee": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Gallery_3.jpg",
+            "image_padding": false
+          }
+        }
+      },
+      "block_order": [
+        "6320ccd1-c4c4-4aa7-bdaa-393cf4b23362",
+        "2c3f1e7b-e863-4776-aabd-3e3a787846df",
+        "e8d7de23-29df-46d5-8206-0eed8062c8ee"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_size": "h2",
+        "desktop_layout": "left",
+        "mobile_layout": "collage",
+        "card_styles": "product-card-wrapper",
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "الأكثر مبيعا",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "best-sellers",
+        "products_to_show": 5,
+        "columns_desktop": 5,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 28,
+        "padding_bottom": 36
+      }
+    },
+    "video": {
+      "type": "video",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "cover_image": "shopify:\/\/shop_images\/Hero.jpg",
+        "video_url": "https:\/\/youtu.be\/diIOyfWTaB0",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "9f90692a-7e82-4cc9-b7a4-cb228db8abcf": {
+      "type": "newsletter",
+      "blocks": {
+        "template--15948283510984__9f90692a-7e82-4cc9-b7a4-cb228db8abcf-1670083637fb7870ff-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "اشترك في قائمتنا البريدية",
+            "heading_size": "h1"
+          }
+        },
+        "template--15948283510984__9f90692a-7e82-4cc9-b7a4-cb228db8abcf-1670083637fb7870ff-1": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>اشترك وتوصل بآخر العروض والتخفيضات. مباشرة عند نزولها.<\/p>"
+          }
+        },
+        "template--15948283510984__9f90692a-7e82-4cc9-b7a4-cb228db8abcf-1670083637fb7870ff-2": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "template--15948283510984__9f90692a-7e82-4cc9-b7a4-cb228db8abcf-1670083637fb7870ff-0",
+        "template--15948283510984__9f90692a-7e82-4cc9-b7a4-cb228db8abcf-1670083637fb7870ff-1",
+        "template--15948283510984__9f90692a-7e82-4cc9-b7a4-cb228db8abcf-1670083637fb7870ff-2"
+      ],
+      "settings": {
+        "color_scheme": "background-2",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "image_banner",
+    "rich_text",
+    "3afa7ea6-6a47-4ae8-8ac7-911bee7c417a",
+    "6c5f181f-0666-45ea-a6dc-717104e1244c",
+    "a8a2bcbf-1fb1-4aa5-a612-ce3286828f87",
+    "collage",
+    "featured_collection",
+    "video",
+    "9f90692a-7e82-4cc9-b7a4-cb228db8abcf"
+  ]
+}
