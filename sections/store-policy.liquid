@@ -1,0 +1,252 @@
+{% comment %} AR {% endcomment %}
+{%- style -%}
+.section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+}
+
+@media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+}
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} isolate gradient">
+    <div class="page-width isolate{% if settings.text_boxes_border_thickness > 0 and settings.text_boxes_border_opacity > 0 and settings.media_border_thickness > 0 and settings.media_border_opacity > 0 %} collapse-borders{% endif %}{% unless section.settings.color_scheme == 'background-1' and settings.media_border_thickness > 0 and settings.text_boxes_shadow_opacity == 0 and settings.text_boxes_border_thickness == 0 or settings.text_boxes_border_opacity == 0 %} collapse-corners{% endunless %} section-{{ section.id }}-padding">
+        <div class="section-policy-list">
+            {%- for block in section.blocks -%}
+                {%- case block.type -%}
+                    {%- when 'returns' -%}
+                        <div class="policy-item">
+                            <div class="policy-svg">{% render 'icon-policy-returns' %}</div>
+                            <div class="policy-title">{{ block.settings.title }}</div>
+                        </div>
+                    {%- when 'shipping' -%}
+                        <div class="policy-item">
+                            <div class="policy-svg">{% render 'icon-policy-shipping' %}</div>
+                            <div class="policy-title">{{ block.settings.title }}</div>
+                        </div>
+                    {%- when 'certified' -%}
+                        <div class="policy-item">
+                            <div class="policy-svg">{% render 'icon-policy-certified' %}</div>
+                            <div class="policy-title">{{ block.settings.title }}</div>
+                        </div>
+                    {%- when 'size' -%}
+                        <div class="policy-item">
+                            <div class="policy-svg">{% render 'icon-policy-size' %}</div>
+                            <div class="policy-title">{{ block.settings.title }}</div>
+                        </div>
+                    {%- else -%}
+                        <div class="policy-item">
+                            <div class="policy-svg">
+                                {%- if block.settings.image != blank -%}
+                                    {%- capture sizes -%}(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2){%- endcapture -%}
+                                    {{ block.settings.image | image_url: width: 1500 | image_tag:
+                                        loading: 'lazy',
+                                        sizes: sizes,
+                                        widths: '165, 360, 535, 750, 1070, 1500'
+                                    }}
+                                {%- else -%} 
+                                    {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                                {%- endif -%}
+                            </div>
+                            <div class="policy-title">{{ block.settings.title }}</div>
+                        </div>
+                {%- endcase -%}
+                
+            {%- endfor -%}
+        </div>
+    </div>
+</div>
+
+{% style %}
+.section-policy-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-policy-list .policy-item {
+    text-align: center;
+}
+
+.section-policy-list .policy-item .policy-svg {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.section-policy-list .policy-item .policy-svg img {
+    width: 100%;
+    height: auto;
+}
+
+.section-policy-list .policy-item .policy-title {
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+@media screen and (max-width: 749px) {
+    .section-policy-list {
+        flex-wrap: no-wrap;
+    }
+
+    .section-policy-list .policy-item .policy-svg {
+        width: 4.5rem;
+        height: 4.5rem;
+    }
+}
+
+{% endstyle %}
+
+{% schema %}
+{   
+    "name": "政策列表",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+        {
+            "type": "select",
+            "id": "color_scheme",
+            "options": [
+                {
+                    "value": "accent-1",
+                    "label": "t:sections.all.colors.accent_1.label"
+                },
+                {
+                    "value": "accent-2",
+                    "label": "t:sections.all.colors.accent_2.label"
+                },
+                {
+                    "value": "background-1",
+                    "label": "t:sections.all.colors.background_1.label"
+                },
+                {
+                    "value": "background-2",
+                    "label": "t:sections.all.colors.background_2.label"
+                },
+                {
+                    "value": "inverse",
+                    "label": "t:sections.all.colors.inverse.label"
+                }
+            ],
+            "default": "background-1",
+            "label": "t:sections.all.colors.label"
+        },
+        {
+            "type": "header",
+            "content": "t:sections.all.padding.section_padding_heading"
+        },
+        {
+            "type": "range",
+            "id": "padding_top",
+            "min": 0,
+            "max": 100,
+            "step": 4,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_top",
+            "default": 36
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom",
+            "min": 0,
+            "max": 100,
+            "step": 4,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_bottom",
+            "default": 36
+        }
+
+    ],
+    "blocks": [
+        {
+            "type": "returns",
+            "name": "100 DAY RETURNS",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "标题",
+                    "default": "policy"
+                }
+            ]
+        },
+        {
+            "type": "shipping",
+            "name": "FREE SHIPPING",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "标题",
+                    "default": "policy"
+                }
+            ]
+        },
+        {
+            "type": "certified",
+            "name": "CERTIFIED DIAMONDS",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "标题",
+                    "default": "policy"
+                }
+            ]
+        },
+        {
+            "type": "size",
+            "name": "FREE RESIZING",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "标题",
+                    "default": "policy"
+                }
+            ]
+        },
+        {
+            "type": "custom",
+            "name": "CUSTOM POLICY",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "标题",
+                    "default": "policy"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "图片"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "政策列表",
+            "blocks": [
+                {
+                    "type": "returns"
+                },
+                {
+                    "type": "shipping"
+                },
+                {
+                    "type": "certified"
+                },
+                {
+                    "type": "size"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

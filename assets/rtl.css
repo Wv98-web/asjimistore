@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Almarai&display=swap');
 
 body, h1, h2, h3, h4, h5, h6, p, blockquote, li, a, *:not(.fa):not([class*="pe-"]):not(.lni) {
-  font-family: 'Almarai' !important;letter-spacing:0!important;
+/* AR START */
+  /* font-family: 'Almarai' !important; */
+/* AR END */
+  letter-spacing:0!important;
 }
 
 body, html {

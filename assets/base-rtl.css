@@ -2596,7 +2596,9 @@ details[open] > .header__submenu {
 /* Header menu */
 .header__inline-menu {
   margin-right: -1.2rem;
-  grid-area: navigation;
+  /* AR START */
+  /* grid-area: navigation; */
+  /* AR END */
   display: none;
 }
 
