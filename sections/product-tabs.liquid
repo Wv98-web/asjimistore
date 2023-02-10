@@ -1,0 +1,351 @@
+{% if shop.locale contains 'ar' %}
+    {{ 'product-tabs-rtl.css' | asset_url | stylesheet_tag }}
+{% endif %}
+    {{ 'product-tabs-rtl.css' | asset_url | stylesheet_tag }}
+
+<script src="{{ 'product-tabs.js' | asset_url }}" defer="defer"></script>
+
+{%- style -%}
+.section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+}
+
+@media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+}
+{%- endstyle -%}
+
+{%- if request.page_type == 'product' -%}
+    <div class="color-{{ section.settings.color_scheme }} gradient">
+        <div class="section-{{ section.id }} section-product-tabs page-width section-{{ section.id }}-padding isolate" id="product-tab">
+
+            <ul class="tab-header list-unstyled">
+                {%- for block in section.blocks -%}
+                    {%- case block.type -%}
+                        {% when 'reviews' %}
+                            <li class="tab-header__item" class="tab-header__item" {{ block.shopify_attributes }}>
+                                {{ block.settings.header }}
+                            </li>
+    
+                        {% when 'social_share' %}
+                            <li class="tab-header__item" {{ block.shopify_attributes }}>
+                                {{ block.settings.header }}
+                            </li>
+    
+                        {% when 'description' %}
+                            <li class="tab-header__item active" {{ block.shopify_attributes }}>
+                                {{ block.settings.header }}
+                            </li>
+                            
+                    {%- endcase -%}
+                {%- endfor -%}
+            </ul>
+
+            <div class="tab-content">
+                {%- for block in section.blocks -%}
+                    {%- case block.type -%}
+                        {%- when 'reviews' -%}
+                            <div class="tab-content__item" {{ block.shopify_attributes }}>
+                                product reviews
+                                {% comment %} <div class="panel entry-content sp-tab des_mb_{{cl_mb}} des_style_{{cl_des}}{% if ck %} active{% assign ck = false %}{% else %} dn{% endif %}" data-id-reviewt4s id="tab_{{block.id}}" {{ block.shopify_attributes }}>
+                                    <div class="js_ck_view"></div><div class="heading bgbl dn"><a class="tab-heading flex al_center fl_between pr cd chp fwm" href="#tab_{{block.id}}"><span class="txt_h_tab">{{bk_setts.title}}</span><span class="nav_link_icon ml__5"></span></a></div>
+                                    <div class="sp-tab-content">
+                                    {%- case settings.app_review -%}                        
+                                        {%- when '1' -%}
+                                            <div id="shopify-product-reviews" data-id="{{pid}}">{{ product.metafields.spr.reviews }}</div>
+                                        {%- when '2' -%}
+                                            <div class="lt-block-reviews"><ryviu-widget handle="{{product.handle}}" title_product="{{product.title}}" total_meta="{{ product.metafields.ryviu.r_count }}" image_product="{{ product.featured_image.src | img_url: '800x' }}"></ryviu-widget></div>
+                                        {%- when '3' -%}
+                                            <div id="shopify-ali-review" product-id="{{ pid }}">{{ shop.metafields.review_collector.review_code }}</div>
+                                        {%- when '4' -%}
+                                            <div id="looxReviews" data-product-id="{{pid}}" class="loox-reviews-default">{{ product.metafields.loox.reviews }}</div>
+                                        {%- when '5' -%}
+                                            {%- capture the_snippet_reviews %}{% render 'socialshopwave-widget-recommends' with 1 %}{% endcapture -%}
+                                            {%- unless the_snippet_reviews contains 'Liquid error' %}{{ the_snippet_reviews }}{% endunless -%}
+                                        {%- when '7' -%}{%- render 'judgeme_widgets', widget_type: 'judgeme_review_widget', concierge_install: true, product: product -%}
+                                        {%- else -%}
+                                        <div class="star-rating review_widget_other">{{bk_setts.review_liquid}}</div>
+                                    {%- endcase -%}
+                                    </div>
+                                </div> {% endcomment %}
+                            </div>
+    
+                        {%- when 'social_share' -%}
+                            <div class="tab-content__item" {{ block.shopify_attributes }}>
+                                <p>{{ block.settings.text }}</p>
+                                
+                                <ul class="list-unstyled list-social product__list-social" role="list">
+                                    {%- if settings.social_twitter_link != blank -%}
+                                        <li class="list-social__item">
+                                            <a href="{{ settings.social_twitter_link }}" class="link list-social__link" >
+                                            {%- render 'icon-twitter' -%}
+                                            <span class="visually-hidden">{{ 'general.social.links.twitter' | t }}</span>
+                                            </a>
+                                        </li>
+                                    {%- endif -%}
+                                    {%- if settings.social_facebook_link != blank -%}
+                                        <li class="list-social__item">
+                                            <a href="{{ settings.social_facebook_link }}" class="link list-social__link" >
+                                            {%- render 'icon-facebook' -%}
+                                            <span class="visually-hidden">{{ 'general.social.links.facebook' | t }}</span>
+                                            </a>
+                                        </li>
+                                    {%- endif -%}
+                                    {%- if settings.social_pinterest_link != blank -%}
+                                        <li class="list-social__item">
+                                            <a href="{{ settings.social_pinterest_link }}" class="link list-social__link" >
+                                                {%- render 'icon-pinterest' -%}
+                                                <span class="visually-hidden">{{ 'general.social.links.pinterest' | t }}</span>
+                                            </a>
+                                        </li>
+                                    {%- endif -%}
+                                    {%- if settings.social_instagram_link != blank -%}
+                                        <li class="list-social__item">
+                                            <a href="{{ settings.social_instagram_link }}" class="link list-social__link" >
+                                                {%- render 'icon-instagram' -%}
+                                                <span class="visually-hidden">{{ 'general.social.links.instagram' | t }}</span>
+                                            </a>
+                                        </li>
+                                    {%- endif -%}
+                                    {%- if settings.social_tiktok_link != blank -%}
+                                        <li class="list-social__item">
+                                            <a href="{{ settings.social_tiktok_link }}" class="link list-social__link" >
+                                                {%- render 'icon-tiktok' -%}
+                                                <span class="visually-hidden">{{ 'general.social.links.tiktok' | t }}</span>
+                                            </a>
+                                        </li>
+                                    {%- endif -%}
+                                    {%- if settings.social_tumblr_link != blank -%}
+                                        <li class="list-social__item">
+                                            <a href="{{ settings.social_tumblr_link }}" class="link list-social__link" >
+                                                {%- render 'icon-tumblr' -%}
+                                                <span class="visually-hidden">{{ 'general.social.links.tumblr' | t }}</span>
+                                            </a>
+                                        </li>
+                                    {%- endif -%}
+                                    {%- if settings.social_snapchat_link != blank -%}
+                                        <li class="list-social__item">
+                                            <a href="{{ settings.social_snapchat_link }}" class="link list-social__link" >
+                                                {%- render 'icon-snapchat' -%}
+                                                <span class="visually-hidden">{{ 'general.social.links.snapchat' | t }}</span>
+                                            </a>
+                                        </li>
+                                    {%- endif -%}
+                                    {%- if settings.social_youtube_link != blank -%}
+                                        <li class="list-social__item">
+                                            <a href="{{ settings.social_youtube_link }}" class="link list-social__link" >
+                                                {%- render 'icon-youtube' -%}
+                                                <span class="visually-hidden">{{ 'general.social.links.youtube' | t }}</span>
+                                            </a>
+                                        </li>
+                                    {%- endif -%}
+                                    {%- if settings.social_vimeo_link != blank -%}
+                                        <li class="list-social__item">
+                                            <a href="{{ settings.social_vimeo_link }}" class="link list-social__link" >
+                                                {%- render 'icon-vimeo' -%}
+                                                <span class="visually-hidden">{{ 'general.social.links.vimeo' | t }}</span>
+                                            </a>
+                                        </li>
+                                    {%- endif -%}
+                                </ul>
+                            </div>
+    
+                        {%- when 'description' -%}
+                            <div class="tab-content__item tab-content__des active" {{ block.shopify_attributes }}>
+                                {%- if product.metafields.product.height != blank -%}
+                                    <div class="grid">
+                                        <div class="grid--header">{{ block.settings.height }}:</div>
+                                        <div class="grid--content">{{ product.metafields.product.height }}</div>
+                                    </div>
+                                {%- endif -%}
+
+                                {%- if product.metafields.product.material != blank -%}
+                                    <div class="grid">
+                                        <div class="grid--header">{{ block.settings.material }}:</div>
+                                        <div class="grid--content">{{ product.metafields.product.material }}</div>
+                                    </div>
+                                {%- endif -%}
+
+                                {%- if product.metafields.product.category != blank -%}
+                                    <div class="grid">
+                                        <div class="grid--header">{{ block.settings.category }}:</div>
+                                        <div class="grid--content">{{ product.metafields.product.category }}</div>
+                                    </div>
+                                {%- endif -%}
+
+                                {%- if product.metafields.product.shipping_and_delivery != blank -%}
+                                    <div class="grid">
+                                        <div class="grid--header">{{ block.settings.shipping_and_delivery }}:</div>
+                                        <div class="grid--content">{{ product.metafields.product.shipping_and_delivery }}</div>
+                                    </div>
+                                {%- endif -%}
+
+                                {%- if product.metafields.product.package_image != blank -%}
+                                <div class="flex">
+                                    <div class="grid--header">{{ block.settings.package_image }}:</div>
+                                    <div class="grid--content product-package_image gradient">
+                                        <img src="{{ product.metafields.product.package_image | img_url: 'master' }}" loading="lazy">
+                                    </div>
+                                </div>
+                                {%- endif -%}
+                            </div>
+                    {%- endcase -%}
+                {%- endfor -%}
+            </div>
+
+        </div>
+    </div>
+{%- endif -%}
+
+{% schema %}
+{
+    "name": "tabs",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+        {
+            "type": "select",
+            "id": "color_scheme",
+            "options": [
+            {
+                "value": "accent-1",
+                "label": "t:sections.all.colors.accent_1.label"
+            },
+            {
+                "value": "accent-2",
+                "label": "t:sections.all.colors.accent_2.label"
+            },
+            {
+                "value": "background-1",
+                "label": "t:sections.all.colors.background_1.label"
+            },
+            {
+                "value": "background-2",
+                "label": "t:sections.all.colors.background_2.label"
+            },
+            {
+                "value": "inverse",
+                "label": "t:sections.all.colors.inverse.label"
+            }
+            ],
+            "default": "background-1",
+            "label": "t:sections.all.colors.label",
+            "info": "t:sections.all.colors.has_cards_info"
+        },
+        {
+            "type": "header",
+            "content": "t:sections.all.padding.section_padding_heading"
+        },
+        {
+            "type": "range",
+            "id": "padding_top",
+            "min": 0,
+            "max": 100,
+            "step": 4,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_top",
+            "default": 36
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom",
+            "min": 0,
+            "max": 100,
+            "step": 4,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_bottom",
+            "default": 36
+        }
+    ],
+    "blocks": [
+        {
+            "type": "reviews",
+            "name": "产品评论",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "header",
+                    "label": "标题"
+                }
+            ]
+        },
+        {
+            "type": "social_share",
+            "name": "社媒分享",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "header",
+                    "label": "标题"
+                },
+                {
+                    "type": "text",
+                    "id": "text",
+                    "label": "二级标题"
+                }
+            ]
+        },
+        {
+            "type": "description",
+            "name": "产品描述",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "header",
+                    "label": "标题"
+                },
+                {
+                    "type": "text",
+                    "id": "height",
+                    "label": "标题(高度)",
+                    "default": "Hight"
+                },
+                {
+                    "type": "text",
+                    "id": "material",
+                    "label": "标题(材料)",
+                    "default": "Material"
+                },
+                {
+                    "type": "text",
+                    "id": "category",
+                    "label": "标题(类目)",
+                    "default": "Category"
+                },
+                {
+                    "type": "text",
+                    "id": "shipping_and_delivery",
+                    "label": "标题(物流与配送)",
+                    "default": "Shipping and delivery"
+                },
+                {
+                    "type": "text",
+                    "id": "package_image",
+                    "label": "标题(包装图片)",
+                    "default": "Package image"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "产品标签页",
+            "blocks": [
+                {
+                    "type": "description"
+                },
+                {
+                    "type": "social_share"
+                },
+                {
+                    "type": "reviews"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

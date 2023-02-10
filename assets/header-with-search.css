@@ -71,7 +71,8 @@
 }
 
 .header__inline-menu-bottom .header__menu-item[aria-expanded="true"],
-.header__inline-menu-bottom .header__menu-item:hover {
+.header__inline-menu-bottom .header__menu-item:hover,
+.header__inline-menu-bottom .header__menu-item:hover .header__active-menu-item {
     color: rgba(var(--color-base-background-2), 1);
 }
 /* AR END */

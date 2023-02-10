@@ -37,7 +37,7 @@
       assign ratio = 1
     endif
   -%}
-  <div class="card-wrapper product-card-wrapper underline-links-hover">
+  <div class="card-wrapper product-card-wrapper underline-links-hover card-product-1">
     <div
       class="
         card
@@ -323,7 +323,7 @@
     </div>
   </div>
 {%- else -%}
-  <div class="product-card-wrapper card-wrapper underline-links-hover">
+  <div class="product-card-wrapper card-wrapper underline-links-hover card-product-1">
     <div
       class="
         card
@@ -371,8 +371,8 @@
 {%- endif -%}
 
 {% style %}
-.collection-1 button.quick-add__submit,
-.collection-1 .collection__view-all .button {
+.card-product-1 button.quick-add__submit,
+.card-product-1 .collection__view-all .button {
   min-height: unset;
   font-size: 1.4rem;
   padding: 0.9rem;
@@ -382,26 +382,26 @@
   transition: .5s all ease;
 }
 
-.collection-1 .collection__view-all .button {
+.card-product-1 .collection__view-all .button {
   min-width: 16rem;
 }
 
-.collection-1 button.quick-add__submit:before,
-.collection-1 button.quick-add__submit:after,
-.collection-1 .collection__view-all .button:before,
-.collection-1 .collection__view-all .button:after {
+.card-product-1 button.quick-add__submit:before,
+.card-product-1 button.quick-add__submit:after,
+.card-product-1 .collection__view-all .button:before,
+.card-product-1 .collection__view-all .button:after {
   content: none;
 }
 
-.collection-1 button.quick-add__submit:hover,
-.collection-1 .collection__view-all .button:hover {
+.card-product-1 button.quick-add__submit:hover,
+.card-product-1 .collection__view-all .button:hover {
   border: 1px solid rgb(var(--color-base-background-2));
   background: rgb(var(--color-base-background-2));
   color: rgb(var(--color-base-background-1));
 }
 
 @media screen and (max-width: 749px) {
-  .collection-1 .collection__view-all .button {
+  .card-product-1 .collection__view-all .button {
     min-width: 13rem;
   }
 }

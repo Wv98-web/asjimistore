@@ -13,29 +13,29 @@
 }
 {%- endstyle -%}
 
-<div class="color-{{ section.settings.color_scheme }} isolate gradient">
+<div class="color-{{ section.settings.color_scheme }} gradient {% if request.page_type == "index" %} section-ar-bg{% endif %}">
     <div class="page-width isolate{% if settings.text_boxes_border_thickness > 0 and settings.text_boxes_border_opacity > 0 and settings.media_border_thickness > 0 and settings.media_border_opacity > 0 %} collapse-borders{% endif %}{% unless section.settings.color_scheme == 'background-1' and settings.media_border_thickness > 0 and settings.text_boxes_shadow_opacity == 0 and settings.text_boxes_border_thickness == 0 or settings.text_boxes_border_opacity == 0 %} collapse-corners{% endunless %} section-{{ section.id }}-padding">
         <div class="section-policy-list">
             {%- for block in section.blocks -%}
                 {%- case block.type -%}
                     {%- when 'returns' -%}
                         <div class="policy-item">
-                            <div class="policy-svg">{% render 'icon-policy-returns' %}</div>
+                            {% render 'icon-policy-returns' %}
                             <div class="policy-title">{{ block.settings.title }}</div>
                         </div>
                     {%- when 'shipping' -%}
                         <div class="policy-item">
-                            <div class="policy-svg">{% render 'icon-policy-shipping' %}</div>
+                            {% render 'icon-policy-shipping' %}
                             <div class="policy-title">{{ block.settings.title }}</div>
                         </div>
                     {%- when 'certified' -%}
                         <div class="policy-item">
-                            <div class="policy-svg">{% render 'icon-policy-certified' %}</div>
+                            {% render 'icon-policy-certified' %}
                             <div class="policy-title">{{ block.settings.title }}</div>
                         </div>
                     {%- when 'size' -%}
                         <div class="policy-item">
-                            <div class="policy-svg">{% render 'icon-policy-size' %}</div>
+                            {% render 'icon-policy-size' %}
                             <div class="policy-title">{{ block.settings.title }}</div>
                         </div>
                     {%- else -%}
@@ -69,6 +69,10 @@
 
 .section-policy-list .policy-item {
     text-align: center;
+    width: calc(25% - var(--grid-desktop-horizontal-spacing) * 3 / 4);
+    max-width: calc(25% - var(--grid-desktop-horizontal-spacing) * 3 / 4);
+    flex-grow: 1;
+    flex-shrink: 0;
 }
 
 .section-policy-list .policy-item .policy-svg {
@@ -90,11 +94,12 @@
 }
 
 @media screen and (max-width: 749px) {
-    .section-policy-list {
-        flex-wrap: no-wrap;
+    .section-policy-list .policy-item {
+        width: calc(25% - 0.8rem * 3 / 4);
+        max-width: calc(25% - 0.8rem * 3 / 4);
     }
 
-    .section-policy-list .policy-item .policy-svg {
+    .section-policy-list .policy-item svg {
         width: 4.5rem;
         height: 4.5rem;
     }

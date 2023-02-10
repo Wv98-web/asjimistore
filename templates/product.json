@@ -25,10 +25,20 @@
           "type": "price",
           "settings": {}
         },
+        "a69fe9b8-861c-4000-9bd6-8005ffce45ac": {
+          "type": "text_background",
+          "settings": {
+            "text": "10٪ خصم على الطلب الأول للمستخدمين الجدد",
+            "text_style": "body",
+            "bg": "#c7e1dd"
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
-            "picker_type": "button"
+            "picker_type": "button",
+            "text": "SIZE GUIDE",
+            "page": "{{ product.metafields.product.size_chart.value }}"
           }
         },
         "quantity_selector": {
@@ -41,12 +51,9 @@
             "show_dynamic_checkout": true
           }
         },
-        "description": {
-          "type": "description",
-          "settings": {}
-        },
         "collapsible-row-0": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "heading": "المواد",
             "icon": "leather",
@@ -56,6 +63,7 @@
         },
         "collapsible-row-1": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "heading": "سياسة الشحن",
             "icon": "truck",
@@ -65,6 +73,7 @@
         },
         "collapsible-row-2": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "heading": "جدول المقاسات",
             "icon": "ruler",
@@ -74,6 +83,7 @@
         },
         "collapsible-row-3": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "heading": "الإهتمام بالمنتج",
             "icon": "heart",
@@ -83,8 +93,41 @@
         },
         "share": {
           "type": "share",
+          "disabled": true,
           "settings": {
             "share_label": "نشر"
+          }
+        },
+        "aa4b571f-c03c-4455-9517-047408a6c310": {
+          "type": "text_icon",
+          "settings": {
+            "heading": "مرجع الحجم",
+            "text_style": "body",
+            "icon": "return"
+          }
+        },
+        "d61459e9-6117-4281-9976-6b0d7d39afca": {
+          "type": "text_icon",
+          "settings": {
+            "heading": "مرجع الحجم",
+            "text_style": "body",
+            "icon": "shipping"
+          }
+        },
+        "b513fe15-13ac-4828-889b-6a8e51674fb5": {
+          "type": "text_icon",
+          "settings": {
+            "heading": "مرجع الحجم",
+            "text_style": "body",
+            "icon": "diamond"
+          }
+        },
+        "fc7fdd14-2572-4d90-970c-112d0a272107": {
+          "type": "text_icon",
+          "settings": {
+            "heading": "مرجع الحجم",
+            "text_style": "body",
+            "icon": "ring"
           }
         }
       },
@@ -93,103 +136,198 @@
         "title",
         "caption",
         "price",
+        "a69fe9b8-861c-4000-9bd6-8005ffce45ac",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
-        "description",
         "collapsible-row-0",
         "collapsible-row-1",
         "collapsible-row-2",
         "collapsible-row-3",
-        "share"
+        "share",
+        "aa4b571f-c03c-4455-9517-047408a6c310",
+        "d61459e9-6117-4281-9976-6b0d7d39afca",
+        "b513fe15-13ac-4828-889b-6a8e51674fb5",
+        "fc7fdd14-2572-4d90-970c-112d0a272107"
       ],
       "settings": {
         "enable_sticky_info": true,
         "media_position": "left",
-        "gallery_layout": "stacked",
+        "gallery_layout": "thumbnail_slider",
         "media_size": "medium",
-        "mobile_thumbnails": "hide",
+        "mobile_thumbnails": "show",
         "hide_variants": true,
         "enable_video_looping": false,
+        "size_ck": "",
         "padding_top": 36,
         "padding_bottom": 12
       }
     },
-    "image-with-text": {
-      "type": "image-with-text",
+    "3a3b1170-d4bb-4e95-8454-00e7609c2af1": {
+      "type": "product-tabs",
       "blocks": {
-        "image-with-text-0": {
-          "type": "heading",
+        "template--17762998649124__3a3b1170-d4bb-4e95-8454-00e7609c2af1-16759136527f4b0c07-0": {
+          "type": "description",
           "settings": {
-            "heading": "هذا النص هو مثال",
-            "heading_size": "h1"
+            "header": "معلومات المنتج",
+            "height": "Hight",
+            "material": "Material",
+            "category": "Category",
+            "shipping_and_delivery": "Shipping and delivery",
+            "package_image": "Package image"
           }
         },
-        "image-with-text-1": {
-          "type": "text",
+        "template--17762998649124__3a3b1170-d4bb-4e95-8454-00e7609c2af1-16759136527f4b0c07-1": {
+          "type": "social_share",
           "settings": {
-            "text": "<p>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى.<\/p>",
-            "text_style": "body"
+            "header": "وصف المنتج",
+            "text": "استعدي لإطلالة مفعمة بالفخامة المطلقة والجمال الجا"
+          }
+        },
+        "template--17762998649124__3a3b1170-d4bb-4e95-8454-00e7609c2af1-16759136527f4b0c07-2": {
+          "type": "reviews",
+          "settings": {
+            "header": "آراء العملاء"
           }
         }
       },
       "block_order": [
-        "image-with-text-0",
-        "image-with-text-1"
+        "template--17762998649124__3a3b1170-d4bb-4e95-8454-00e7609c2af1-16759136527f4b0c07-0",
+        "template--17762998649124__3a3b1170-d4bb-4e95-8454-00e7609c2af1-16759136527f4b0c07-1",
+        "template--17762998649124__3a3b1170-d4bb-4e95-8454-00e7609c2af1-16759136527f4b0c07-2"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/About_1.jpg",
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "878a2f1b-9123-4361-8c83-f4548eb90331": {
+      "type": "store-policy",
+      "blocks": {
+        "template--17762998649124__878a2f1b-9123-4361-8c83-f4548eb90331-167583339458b44b0b-0": {
+          "type": "returns",
+          "settings": {
+            "title": "100 DAY RETURNS"
+          }
+        },
+        "template--17762998649124__878a2f1b-9123-4361-8c83-f4548eb90331-167583339458b44b0b-1": {
+          "type": "shipping",
+          "settings": {
+            "title": "FREE SHIPPING"
+          }
+        },
+        "template--17762998649124__878a2f1b-9123-4361-8c83-f4548eb90331-167583339458b44b0b-2": {
+          "type": "certified",
+          "settings": {
+            "title": "CERTIFIED DIAMONDS"
+          }
+        },
+        "template--17762998649124__878a2f1b-9123-4361-8c83-f4548eb90331-167583339458b44b0b-3": {
+          "type": "size",
+          "settings": {
+            "title": "FREE RESIZING"
+          }
+        }
+      },
+      "block_order": [
+        "template--17762998649124__878a2f1b-9123-4361-8c83-f4548eb90331-167583339458b44b0b-0",
+        "template--17762998649124__878a2f1b-9123-4361-8c83-f4548eb90331-167583339458b44b0b-1",
+        "template--17762998649124__878a2f1b-9123-4361-8c83-f4548eb90331-167583339458b44b0b-2",
+        "template--17762998649124__878a2f1b-9123-4361-8c83-f4548eb90331-167583339458b44b0b-3"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "a7ae7ae5-846f-44e3-b076-606e4997e839": {
+      "type": "image-with-text2",
+      "blocks": {
+        "template--17762998649124__a7ae7ae5-846f-44e3-b076-606e4997e839-1675929810196cbb8d-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "RESPONSIBLY SOURCED",
+            "heading_size": "h2"
+          }
+        },
+        "template--17762998649124__a7ae7ae5-846f-44e3-b076-606e4997e839-1675929810196cbb8d-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>For more than two decades, we have made dedicated efforts to responsibly source the precious materials we use in our jewelry.<\/p>",
+            "text_style": "body"
+          }
+        },
+        "template--17762998649124__a7ae7ae5-846f-44e3-b076-606e4997e839-1675929810196cbb8d-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "شاهد المزيد",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--17762998649124__a7ae7ae5-846f-44e3-b076-606e4997e839-1675929810196cbb8d-0",
+        "template--17762998649124__a7ae7ae5-846f-44e3-b076-606e4997e839-1675929810196cbb8d-1",
+        "template--17762998649124__a7ae7ae5-846f-44e3-b076-606e4997e839-1675929810196cbb8d-2"
+      ],
+      "settings": {
+        "show_image": true,
+        "image": "shopify:\/\/shop_images\/divide.png",
+        "image2": "shopify:\/\/shop_images\/home-bg.png",
+        "height": "small",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "db4e7aba-ced4-4370-ad5a-57155fb06196": {
+      "type": "image-with-text2",
+      "blocks": {
+        "template--17762998649124__db4e7aba-ced4-4370-ad5a-57155fb06196-1675929810196cbb8d-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "TORMETI MANUFACTURING",
+            "heading_size": "h2"
+          }
+        },
+        "template--17762998649124__db4e7aba-ced4-4370-ad5a-57155fb06196-1675929810196cbb8d-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada nibh lectus, ut convallis leo malesuada eu. Aliquam consectetur pretium nisi ut eleifend. Vestibulum eget erat et ligula commodo efficitur. Nullam vel iaculis fermentum eros, non lobortis lectus.<\/p>",
+            "text_style": "body"
+          }
+        },
+        "template--17762998649124__db4e7aba-ced4-4370-ad5a-57155fb06196-1675929810196cbb8d-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "شاهد المزيد",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--17762998649124__db4e7aba-ced4-4370-ad5a-57155fb06196-1675929810196cbb8d-0",
+        "template--17762998649124__db4e7aba-ced4-4370-ad5a-57155fb06196-1675929810196cbb8d-1",
+        "template--17762998649124__db4e7aba-ced4-4370-ad5a-57155fb06196-1675929810196cbb8d-2"
+      ],
+      "settings": {
+        "show_image": true,
         "height": "small",
         "desktop_image_width": "medium",
         "layout": "text_first",
         "desktop_content_position": "top",
         "desktop_content_alignment": "left",
         "content_layout": "no-overlap",
-        "color_scheme": "background-2",
-        "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "multicolumn": {
-      "type": "multicolumn",
-      "blocks": {
-        "column-0": {
-          "type": "column",
-          "settings": {
-            "title": "شحن سريع",
-            "text": "<p>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column-1": {
-          "type": "column",
-          "settings": {
-            "title": "دفع سريع وآمن",
-            "text": "<p>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column-0",
-        "column-1"
-      ],
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "columns_desktop": 2,
-        "column_alignment": "left",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
         "color_scheme": "background-1",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
+        "mobile_content_alignment": "left",
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -214,8 +352,10 @@
   },
   "order": [
     "main",
-    "image-with-text",
-    "multicolumn",
+    "3a3b1170-d4bb-4e95-8454-00e7609c2af1",
+    "878a2f1b-9123-4361-8c83-f4548eb90331",
+    "a7ae7ae5-846f-44e3-b076-606e4997e839",
+    "db4e7aba-ced4-4370-ad5a-57155fb06196",
     "product-recommendations"
   ]
 }

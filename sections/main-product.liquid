@@ -343,6 +343,32 @@
           {%- case block.type -%}
             {%- when '@app' -%}
               {% render block %}
+            {% comment %} AR START {% endcomment %}
+            {%- when 'text_icon' -%}
+              <div class="product__text-icon" style="display: flex; align-items: center; gap: 1rem;">
+                {%- case block.settings.icon -%}
+                  {%- when 'diamond' -%}
+                    {% render 'icon-product-diamond' %}
+                  {%- when 'shipping' -%}
+                    {% render 'icon-product-shipping' %}
+                  {%- when 'ring' -%}
+                    {% render 'icon-product-ring' %}
+                  {%- when 'return' -%}
+                    {% render 'icon-product-return' %}
+                {%- endcase -%}
+                <h2 class="h4 accordion__title{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}">
+                  {{ block.settings.heading }}
+                </h2>
+              </div>
+            {%- when 'text_background' -%}
+              <p
+                class="product__text{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
+                {{ block.shopify_attributes }}
+                style="{% if block.settings.bg != blank %}background: {{ block.settings.bg }}; padding: 1rem 2rem;{% endif %}"
+              >
+                {{- block.settings.text -}}
+              </p>
+            {% comment %} AR END {% endcomment %}
             {%- when 'text' -%}
               <p
                 class="product__text{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
@@ -361,7 +387,7 @@
               </div>
             {%- when 'price' -%}
               <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
-                {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
+                {%- render 'price-rtl', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
               </div>
               {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
                 <div class="product__tax caption rte">
@@ -509,8 +535,38 @@
                     {{ block.shopify_attributes }}
                   >
                     {%- for option in product.options_with_values -%}
+                      {% comment %} 判断变体名称, 是否展示尺码指南 {% endcomment %}
+                      {%- liquid 
+                        assign size_ck = section.settings.size_ck | append:',size,sizes,مقاس'
+                        assign get_size = size_ck | replace: ' ,', ',' | replace: ', ', ',' | split: ',' | uniq
+                        assign option_name = option.name | downcase -%}
                       <fieldset class="js product-form__input">
+                        {%- if get_size contains option_name -%} 
+                        <legend class="form__label" style="display: flex; align-items: center; gap: 1rem;">
+                          {{ option.name }}
+                          <modal-opener
+                            class="product-popup-modal__opener no-js-hidden quick-add-hidden variant__size"
+                            data-modal="#PopupModal-{{ block.id }}"
+                            {{ block.shopify_attributes }}
+                          >
+                            <button
+                              id="ProductPopup-{{ block.id }}"
+                              class="product-popup-modal__button link"
+                              type="button"
+                              aria-haspopup="dialog"
+                              style="display: inline-flex; align-items: center; gap: .8rem; font-size: 1.2rem;"
+                            >
+                              {% render 'icon-size' %}
+                              {{ block.settings.text | default: block.settings.page.title }}
+                            </button>
+                          </modal-opener>
+                          <a href="{{ block.settings.page.url }}" class="product-popup-modal__button link no-js">
+                            {{- block.settings.text -}}
+                          </a>
+                        </legend>
+                        {%- else -%}
                         <legend class="form__label">{{ option.name }}</legend>
+                        {%- endif -%}
                         {%- for value in option.values -%}
                           <input
                             type="radio"
@@ -1120,6 +1176,33 @@
     </modal-dialog>
   {%- endfor -%}
 
+  {% comment %} 只对变体名称为size的展示 {% endcomment %}
+  {% assign size_popups = section.blocks | where: "type", "variant_picker" %}
+  {%- for block in size_popups -%}
+    <modal-dialog id="PopupModal-{{ block.id }}" class="product-popup-modal" {{ block.shopify_attributes }}>
+      <div
+        role="dialog"
+        aria-label="{{ block.settings.text }}"
+        aria-modal="true"
+        class="product-popup-modal__content"
+        tabindex="-1"
+      >
+        <button
+          id="ModalClose-{{ block.id }}"
+          type="button"
+          class="product-popup-modal__toggle"
+          aria-label="{{ 'accessibility.close' | t }}"
+        >
+          {% render 'icon-close' %}
+        </button>
+        <div class="product-popup-modal__content-info">
+          <h1 class="h2">{{ block.settings.page.title }}</h1>
+          {{ block.settings.page.content }}
+        </div>
+      </div>
+    </modal-dialog>
+  {%- endfor -%}
+
   {%- if product.media.size > 0 -%}
     <script src="{{ 'product-modal.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'media-gallery.js' | asset_url }}" defer="defer"></script>
@@ -1209,6 +1292,13 @@
   </script>
 </section>
 
+{% style %}
+.variant__size svg {
+  width: 2rem;
+  height: 2rem;
+}
+{% endstyle %}
+
 {% schema %}
 {
   "name": "t:sections.main-product.name",
@@ -1251,6 +1341,100 @@
       ]
     },
     {
+      "type": "text_icon",
+      "name": "有图标的文本",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Text block",
+          "label": "t:sections.main-product.blocks.text.settings.text.label"
+        },
+        {
+          "type": "select",
+          "id": "text_style",
+          "options": [
+            {
+              "value": "body",
+              "label": "t:sections.main-product.blocks.text.settings.text_style.options__1.label"
+            },
+            {
+              "value": "subtitle",
+              "label": "t:sections.main-product.blocks.text.settings.text_style.options__2.label"
+            },
+            {
+              "value": "uppercase",
+              "label": "t:sections.main-product.blocks.text.settings.text_style.options__3.label"
+            }
+          ],
+          "default": "body",
+          "label": "t:sections.main-product.blocks.text.settings.text_style.label"
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "options": [
+            {
+              "value": "return",
+              "label": "退货"
+            },
+            {
+              "value": "shipping",
+              "label": "物流"
+            },
+            {
+              "value": "diamond",
+              "label": "钻石"
+            },
+            {
+              "value": "ring",
+              "label": "戒指"
+            }
+          ],
+          "default": "diamond",
+          "label": "选择图标"
+        }
+      ]
+    },
+    {
+      "type": "text_background",
+      "name": "有背景色的文本",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "default": "Text block",
+          "label": "t:sections.main-product.blocks.text.settings.text.label"
+        },
+        {
+          "type": "select",
+          "id": "text_style",
+          "options": [
+            {
+              "value": "body",
+              "label": "t:sections.main-product.blocks.text.settings.text_style.options__1.label"
+            },
+            {
+              "value": "subtitle",
+              "label": "t:sections.main-product.blocks.text.settings.text_style.options__2.label"
+            },
+            {
+              "value": "uppercase",
+              "label": "t:sections.main-product.blocks.text.settings.text_style.options__3.label"
+            }
+          ],
+          "default": "body",
+          "label": "t:sections.main-product.blocks.text.settings.text_style.label"
+        },
+        {
+          "type": "color",
+          "id": "bg",
+          "label": "文本展示背景色",
+          "default": "#C7E1DD"
+        }
+      ]
+    },
+    {
       "type": "title",
       "name": "t:sections.main-product.blocks.title.name",
       "limit": 1
@@ -1285,6 +1469,17 @@
           ],
           "default": "button",
           "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.label"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "default": "Pop-up link text",
+          "label": "t:sections.main-product.blocks.popup.settings.link_label.label"
+        },
+        {
+          "id": "page",
+          "type": "page",
+          "label": "t:sections.main-product.blocks.popup.settings.page.label"
         }
       ]
     },
@@ -1953,6 +2148,16 @@
       "id": "enable_video_looping",
       "default": false,
       "label": "t:sections.main-product.settings.enable_video_looping.label"
+    },
+    {
+      "type": "header",
+      "content": "变体类型设置"
+    },
+    {
+      "type": "textarea",
+      "id": "size_ck",
+      "label": "输入你想展示尺码指南的变体名称",
+      "info": "Eg: size,sizes,مقاس"
     },
     {
       "type": "header",

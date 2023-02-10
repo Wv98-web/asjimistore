@@ -2957,3 +2957,38 @@ details-disclosure > details {
     outline: transparent solid 1px;
   }
 }
+
+/* AR START */
+@media screen and (min-width: 1240px) {
+  .section-ar-bg {
+    position: relative;
+  }
+
+  .section-ar-bg:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5rem;
+    height: 100%;
+    background-image: url(https://cdn.shopify.com/s/files/1/0714/8617/7572/files/home-bg.png);
+    background-repeat: repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: 1;
+  }
+
+  .section-ar-bg:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5rem;
+    height: 100%;
+    background-image: url(https://cdn.shopify.com/s/files/1/0714/8617/7572/files/home-bg.png);
+    background-repeat: repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: 1;
+  }
+}

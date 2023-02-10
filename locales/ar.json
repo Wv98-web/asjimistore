@@ -1292,7 +1292,7 @@
       "password_link": "أدخل باستخدام كلمة المرور",
       "login_password_button": "أدخل باستعمال كلمة السر",
       "login_form_error": "كلمة السر خاطئة",
-      "powered_by_shopify_html": ""
+      "powered_by_shopify_html": "سيتم تشغيل هذا المتجر بواسطة {{shopify}}"
     },
     "social": {
       "share_on_facebook": "نشر في الفيسبوك",
@@ -1870,7 +1870,7 @@
     "button_label": "اشتراك"
   },
   "accessibility": {
-    "skip_to_text": "تخطى للمحتوى",
+    "skip_to_text": "تخطى الى المحتوى",
     "skip_to_product_info": "تخطى لمعلومات المنتج",
     "close": "إغلاق",
     "unit_price_separator": "لكل",
@@ -2007,7 +2007,7 @@
       }
     },
     "404": {
-      "title": "صفحة غير موجودة",
+      "title": "الصفحة غير موجودة",
       "subtext": "404"
     }
   },
@@ -2030,6 +2030,34 @@
       "expired": "منتهية",
       "copy_code_success": "تم النسخ بنجاح",
       "print_gift_card": "طباعة"
+    }
+  },
+  "customer_accounts": {
+    "enable_javascript": "لعرض حسابك ، قم بتمكين JavaScript في إعدادات المستعرض الخاص بك أو قم بتسجيل الدخول باستخدام متصفح آخر.",
+    "navigation_and_structure": {
+      "account_menu": {
+        "hide_accessibility_label": "إخفاء قائمة الحساب",
+        "label": "حساب",
+        "show_accessibility_label": "إظهار قائمة الحساب"
+      },
+      "action_menu_accessibility_label": "المزيد من الإجراءات",
+      "close_menu_accessibility_label": "إغلاق التنقل الرئيسي",
+      "contact_link": "تواصل معنا",
+      "delete_confirmation": {
+        "cancel": "إلغاء",
+        "delete": "حذف"
+      },
+      "dismiss_toast": "صرف النظر",
+      "go_to_store_link": "اذهب إلى المتجر",
+      "loading_message": "جار التحميل",
+      "log_out_link": "تسجيل خروج",
+      "logout_overlay_label": "جارٍ تسجيل خروجك ...",
+      "nav_label_accessibility_label": "الملاحة الرئيسية",
+      "open_menu_accessibility_label": "افتح التنقل الرئيسي",
+      "contact_email_subject": "جهة اتصال من متجر {{shopName}} عبر الإنترنت",
+      "document_title": "{{sectionName}} - {{shopName}} - الحساب",
+      "generic_accessibility_label": "{{label}}: {{قيمة}}",
+      "navigation_accessibility_message": "لقد انتقلت إلى {{sectionName}}"
     }
   }
 }

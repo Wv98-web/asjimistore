@@ -65,6 +65,73 @@
     margin-bottom: 6rem;
   }
 
+  .footer-ar {
+    position: relative;
+    margin-top: 0;
+  }
+
+  @media screen and (min-width: 1500px) {
+    .footer-ar:before {
+      content: "";
+      position: absolute;
+      width: calc((100% - var(--page-width)) / 2);
+      height: auto;
+      aspect-ratio: {{ section.settings.footer_bg.aspect_ratio }};
+      left: 0;
+      bottom: 0;
+      background: url({{ section.settings.footer_bg | img_url: 'master' }});
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .footer-ar .footer__content-top {
+      position: relative;
+    }
+
+    .footer-ar .footer__content-top:before {
+        content: "";
+        position: absolute;
+        width: 50%;
+        height: auto;
+        aspect-ratio: {{ section.settings.footer_bg.aspect_ratio }};
+        left: 0;
+        bottom: 0;
+        background: url({{ section.settings.footer_bg | img_url: 'master' }});
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .footer-ar .footer__blocks-wrapper {
+      position: relative;
+    }
+  }
+
+  .footer-ar .footer-social h2,
+  .footer-ar .list-social__link,
+  .footer-ar .footer-block__heading,
+  .footer-ar .footer-block__details-content .list-menu__item--link,
+  .footer-ar .field__button,
+  .footer-ar .copyright__content a {
+    color: #fff;
+  }
+
+  .footer-ar .field:after,
+  .footer-ar .field:hover.field:after,
+  .footer-ar .field__input:focus-visible {
+    border: .1rem solid transparent;
+    box-shadow: 0 0 0 transparent;
+  }
+
+  .footer-ar .field__input {
+    background: #fff;
+  }
+
+  .footer-ar .field__button {
+    background-color: #EF422B !important;
+  }
+
   @media screen and (min-width: 750px) {
     .footer-ar .footer__blocks-wrapper.grid {
       column-gap: 14rem;
@@ -600,7 +667,7 @@
           </div> {% endcomment %}
           {% comment %} AR START{% endcomment %}
           <div class="copyright__content">
-            حقوق النشر &copy; 2023 مجوهرات جميلة. جميع الحقوق محفوظة.
+            {{ section.settings.copyright | escape }}
           </div>
           {% comment %} AR END{% endcomment %}
         </div>
@@ -793,6 +860,11 @@
       "label": "t:sections.all.colors.label"
     },
     {
+      "type": "image_picker",
+      "id": "footer_bg",
+      "label": "底部插图"
+    },
+    {
       "type": "header",
       "content": "t:sections.footer.settings.header__1.content",
       "info": "t:sections.footer.settings.header__1.info"
@@ -900,7 +972,12 @@
         "id": "show_theme_copyright",
         "label": "Show Theme Copyright",
         "default": true
-      }    
+      },
+      {
+        "type": "text",
+        "id": "copyright",
+        "label": "版权信息"
+      }
   ],
   "default": {
     "blocks": [
