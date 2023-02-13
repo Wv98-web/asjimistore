@@ -67,7 +67,7 @@
   endif
 -%}
 
-<div class="color-{{ section.settings.color_scheme }} isolate gradient section-ar-bg">
+<div class="color-{{ section.settings.color_scheme }} isolate gradient {% if request.page_type == "index" %} section-ar-bg{% endif %}">
   <div class="collection collection-1 section-{{ section.id }}-padding{% if section.settings.full_width %} collection--full-width{% endif %}">
       <div class="collection__title title-wrapper title-wrapper--no-top-margin page-width{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% endif %}{% if show_desktop_slider %} collection__title--desktop-slider{% endif %}">
         {%- if section.settings.title != blank -%}

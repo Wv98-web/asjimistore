@@ -1297,13 +1297,34 @@
   width: 2rem;
   height: 2rem;
 }
+
+{% if section.settings.show_bg and section.settings.product_bg != blank %}
+@media screen and (min-width: 1500px) {
+  .section-product-bg {
+    position: relative;
+  }
+
+  .section-product-bg:before {
+    content: "";
+    position: absolute;
+    width: calc((100% - var(--page-width)) / 2);
+    height: auto;
+    aspect-ratio: 341/359;
+    left: 0;
+    top: 0;
+    background: url({{ section.settings.product_bg | img_url: "master" }});
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+{% endif %}
 {% endstyle %}
 
 {% schema %}
 {
   "name": "t:sections.main-product.name",
   "tag": "section",
-  "class": "section",
+  "class": "section section-product-bg",
   "blocks": [
     {
       "type": "@app"
@@ -2158,6 +2179,17 @@
       "id": "size_ck",
       "label": "输入你想展示尺码指南的变体名称",
       "info": "Eg: size,sizes,مقاس"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_bg",
+      "label": "是否展示插图",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "product_bg",
+      "label": "详情页插图"
     },
     {
       "type": "header",

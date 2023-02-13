@@ -37,7 +37,7 @@
           "type": "variant_picker",
           "settings": {
             "picker_type": "button",
-            "text": "SIZE GUIDE",
+            "text": "دليل المقاسات",
             "page": "{{ product.metafields.product.size_chart.value }}"
           }
         },
@@ -159,6 +159,8 @@
         "hide_variants": true,
         "enable_video_looping": false,
         "size_ck": "",
+        "show_bg": true,
+        "product_bg": "shopify:\/\/shop_images\/8ea65ca09c3c2c35ef0a633d41ae1903.png",
         "padding_top": 36,
         "padding_bottom": 12
       }

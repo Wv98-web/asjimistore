@@ -63,6 +63,10 @@
 {{ 'header-with-search.css' | asset_url | stylesheet_tag }}
 
 <style>
+.predictive-search {
+  display: none;
+}
+
 {% if shop.locale contains 'ar' %}
   header-drawer {
     justify-self: start;
@@ -514,22 +518,24 @@
         {%- endif -%}
       </div>
 
-      <div class="header-search-modal gradient" role="dialog" aria-modal="true" aria-label="{{ 'general.search.search' | t }}" style="margin-top: 5px;">
+      <div class="header-search-modal gradient" role="dialog" aria-modal="true" aria-label="{{ 'general.search.search' | t }}" style="margin-top: 3rem;">
         <div class="modal-overlay"></div>
 
-        {%- if section.settings.search_hot_list.products_count > 0 -%}
-          <div class="search-hot-list">
-            {%- for product in section.settings.search_hot_list.products -%}
-              <a class="search-hot__item full-unstyled-link" href={{ product.url }} target="_blank">
-                <div class="hot-content"><span class="search_icon">{% render 'icon-hot-search' %}</span><span class="search_name">{{ product.handle | escape }}</span></div>
+        {%- if section.settings.search_hot_list != blank -%}
+          <div class="search-hot-list" style="margin-bottom: 4rem">
+            {%- for link in section.settings.search_hot_list.links -%}
+              <a class="search-hot__item full-unstyled-link" href={{ link.url }} target="_blank">
+                <div class="hot-content"><span class="search_icon">{% render 'icon-hot-search' %}</span><span class="search_name">{{ link.title | escape }}</span></div>
               </a>
             {%- endfor -%}
           </div>
         {%- endif -%}
 
-        <div class="search-divide" style="width: 100%; height: 50px; margin-top: 40px; margin-bottom: 40px; background-image: url({{ section.settings.divide_image | img_url: "master" }});">
-          <span class="hidden">DIVIDE</span>
-        </div>
+        {%- if section.settings.divide_image != blank -%}
+          <div class="search-divide" style="width: 100%; height: 50px; margin-bottom: 4rem; background-image: url({{ section.settings.divide_image | img_url: "master" }});">
+            <span class="hidden">DIVIDE</span>
+          </div>
+        {%- endif -%}
 
         {%- if section.settings.search_collection.products_count > 0 -%}
           <div class="search-collection-list page-width gradient collection-list contains-card contains-card--collection contains-card--standard grid grid--4-col-desktop grid--2-col-tablet-down collection-list--4-items" style="width: 100%;">
@@ -1317,7 +1323,7 @@
       "content": "搜索设置"
     },
     {
-      "type": "collection",
+      "type": "link_list",
       "id": "search_hot_list",
       "label": "热门搜索列表(产品)"
     },

@@ -8,12 +8,12 @@
         "image_height": "medium",
         "adapt_height_first_image": true,
         "desktop_content_position": "middle-center",
-        "show_text_box": false,
+        "show_text_box": true,
         "desktop_content_alignment": "center",
         "color_scheme": "background-1",
         "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "stack_images_on_mobile": true,
+        "show_text_below": true
       }
     },
     "8ef39932-4e8d-497b-98dc-d8d18fe1c824": {
@@ -22,25 +22,25 @@
         "template--17762998452516__8ef39932-4e8d-497b-98dc-d8d18fe1c824-1675650557f769b4b6-0": {
           "type": "featured_collection",
           "settings": {
-            "collection": "bracelets"
+            "collection": "jewelry-sets"
           }
         },
         "template--17762998452516__8ef39932-4e8d-497b-98dc-d8d18fe1c824-1675650557f769b4b6-1": {
           "type": "featured_collection",
           "settings": {
-            "collection": "earrings"
+            "collection": "rings"
           }
         },
         "template--17762998452516__8ef39932-4e8d-497b-98dc-d8d18fe1c824-1675650557f769b4b6-2": {
           "type": "featured_collection",
           "settings": {
-            "collection": "jewelry-sets"
+            "collection": "earrings"
           }
         },
         "template--17762998452516__8ef39932-4e8d-497b-98dc-d8d18fe1c824-1675650557f769b4b6-3": {
           "type": "featured_collection",
           "settings": {
-            "collection": "women"
+            "collection": "bracelets"
           }
         }
       },
@@ -51,7 +51,7 @@
         "template--17762998452516__8ef39932-4e8d-497b-98dc-d8d18fe1c824-1675650557f769b4b6-3"
       ],
       "settings": {
-        "title": "فئة المنتج",
+        "title": "فئة",
         "heading_size": "h2",
         "image_ratio": "square",
         "columns_desktop": 4,
@@ -66,10 +66,10 @@
     "f04dede5-e882-4c8e-9cf8-215cda59b194": {
       "type": "collection-list-square",
       "blocks": {
-        "template--17762998452516__f04dede5-e882-4c8e-9cf8-215cda59b194-16756520944cb0db8e-0": {
+        "8129e266-585a-473f-b983-556eba9b7943": {
           "type": "featured_collection",
           "settings": {
-            "collection": "red-gem"
+            "collection": "red-gemstone"
           }
         },
         "template--17762998452516__f04dede5-e882-4c8e-9cf8-215cda59b194-16756520944cb0db8e-1": {
@@ -84,21 +84,21 @@
             "collection": "green-gem"
           }
         },
-        "8129e266-585a-473f-b983-556eba9b7943": {
+        "template--17762998452516__f04dede5-e882-4c8e-9cf8-215cda59b194-16756520944cb0db8e-0": {
           "type": "featured_collection",
           "settings": {
-            "collection": "red-gemstone"
+            "collection": "red-gem"
           }
         }
       },
       "block_order": [
-        "template--17762998452516__f04dede5-e882-4c8e-9cf8-215cda59b194-16756520944cb0db8e-0",
+        "8129e266-585a-473f-b983-556eba9b7943",
         "template--17762998452516__f04dede5-e882-4c8e-9cf8-215cda59b194-16756520944cb0db8e-1",
         "template--17762998452516__f04dede5-e882-4c8e-9cf8-215cda59b194-16756520944cb0db8e-2",
-        "8129e266-585a-473f-b983-556eba9b7943"
+        "template--17762998452516__f04dede5-e882-4c8e-9cf8-215cda59b194-16756520944cb0db8e-0"
       ],
       "settings": {
-        "title": "الحجارة الملونة",
+        "title": "احجار ملونة",
         "heading_size": "h2",
         "image_ratio": "square",
         "columns_desktop": 4,
@@ -113,13 +113,13 @@
     "780fe252-7473-4ed0-8f01-ed88737cb1bf": {
       "type": "featured-collection-1",
       "settings": {
-        "title": "الكتب الأكثر مبيعًا",
+        "title": "بيع حار",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "bracelets",
-        "products_to_show": 4,
+        "collection": "test-collection-do-not-delete",
+        "products_to_show": 8,
         "columns_desktop": 4,
         "full_width": false,
         "show_view_all": true,
@@ -140,13 +140,13 @@
     "6af3641d-7bbb-4127-aef8-7ed1cb49b348": {
       "type": "featured-collection-1",
       "settings": {
-        "title": "منتج جديد",
+        "title": "الجديد في",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "jewelry-sets",
-        "products_to_show": 4,
+        "collection": "test-collection-do-not-delete",
+        "products_to_show": 8,
         "columns_desktop": 4,
         "full_width": false,
         "show_view_all": true,
@@ -171,7 +171,7 @@
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/young-female-models-denim.jpg",
-            "button_link": "shopify:\/\/collections\/frontpage"
+            "button_link": "shopify:\/\/collections\/women"
           }
         },
         "template--17762998452516__5ff99729-b560-4693-a24a-bf690b94e932-1675660229919b85fb-1": {

@@ -138,6 +138,16 @@
               </span>
             {%- endif -%}
           </div>
+
+          <div class="card__badge top right card__wish add_to_wish" data-handle="{{ card_product.handle }}" style="z-index: 2;">
+            <div class="card__wish-item">
+              {%- if false -%}
+                {% render 'icon-heart-full' %}
+              {%- else -%}
+                {% render 'icon-heart' %}
+              {%- endif -%}
+            </div>
+          </div>
         </div>
       </div>
       <div class="card__content">
