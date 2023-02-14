@@ -25,10 +25,14 @@
           "type": "price",
           "settings": {}
         },
+        "judgeme_preview_badge_product_page_6ea947d7": {
+          "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
         "a69fe9b8-861c-4000-9bd6-8005ffce45ac": {
           "type": "text_background",
           "settings": {
-            "text": "10٪ خصم على الطلب الأول للمستخدمين الجدد",
+            "text": "10% discount on the first order for new users.",
             "text_style": "body",
             "bg": "#c7e1dd"
           }
@@ -55,9 +59,9 @@
           "type": "collapsible_tab",
           "disabled": true,
           "settings": {
-            "heading": "المواد",
+            "heading": "Materials",
             "icon": "leather",
-            "content": "<p>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة<\/p>",
+            "content": "",
             "page": ""
           }
         },
@@ -65,7 +69,7 @@
           "type": "collapsible_tab",
           "disabled": true,
           "settings": {
-            "heading": "سياسة الشحن",
+            "heading": "Shipping Policy",
             "icon": "truck",
             "content": "<p>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة<\/p>",
             "page": ""
@@ -75,9 +79,9 @@
           "type": "collapsible_tab",
           "disabled": true,
           "settings": {
-            "heading": "جدول المقاسات",
+            "heading": "Size chart",
             "icon": "ruler",
-            "content": "<p>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة<\/p>",
+            "content": "",
             "page": ""
           }
         },
@@ -95,19 +99,21 @@
           "type": "share",
           "disabled": true,
           "settings": {
-            "share_label": "نشر"
+            "share_label": "Share"
           }
         },
         "aa4b571f-c03c-4455-9517-047408a6c310": {
           "type": "text_icon",
+          "disabled": true,
           "settings": {
-            "heading": "مرجع الحجم",
+            "heading": "Size Guide",
             "text_style": "body",
             "icon": "return"
           }
         },
         "d61459e9-6117-4281-9976-6b0d7d39afca": {
           "type": "text_icon",
+          "disabled": true,
           "settings": {
             "heading": "مرجع الحجم",
             "text_style": "body",
@@ -116,6 +122,7 @@
         },
         "b513fe15-13ac-4828-889b-6a8e51674fb5": {
           "type": "text_icon",
+          "disabled": true,
           "settings": {
             "heading": "مرجع الحجم",
             "text_style": "body",
@@ -124,6 +131,7 @@
         },
         "fc7fdd14-2572-4d90-970c-112d0a272107": {
           "type": "text_icon",
+          "disabled": true,
           "settings": {
             "heading": "مرجع الحجم",
             "text_style": "body",
@@ -136,6 +144,7 @@
         "title",
         "caption",
         "price",
+        "judgeme_preview_badge_product_page_6ea947d7",
         "a69fe9b8-861c-4000-9bd6-8005ffce45ac",
         "variant_picker",
         "quantity_selector",
@@ -165,13 +174,29 @@
         "padding_bottom": 12
       }
     },
+    "judgeme_section_review_widget_5618": {
+      "type": "apps",
+      "disabled": true,
+      "blocks": {
+        "judgeme_review_widget_06941014": {
+          "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judgeme_review_widget_06941014"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
     "3a3b1170-d4bb-4e95-8454-00e7609c2af1": {
       "type": "product-tabs",
       "blocks": {
         "template--17762998649124__3a3b1170-d4bb-4e95-8454-00e7609c2af1-16759136527f4b0c07-0": {
           "type": "description",
           "settings": {
-            "header": "معلومات المنتج",
+            "header": "Product Information",
             "height": "Hight",
             "material": "Material",
             "category": "Category",
@@ -182,21 +207,19 @@
         "template--17762998649124__3a3b1170-d4bb-4e95-8454-00e7609c2af1-16759136527f4b0c07-1": {
           "type": "social_share",
           "settings": {
-            "header": "وصف المنتج",
-            "text": "استعدي لإطلالة مفعمة بالفخامة المطلقة والجمال الجا"
+            "header": "Product Description",
+            "text": ""
           }
         },
-        "template--17762998649124__3a3b1170-d4bb-4e95-8454-00e7609c2af1-16759136527f4b0c07-2": {
-          "type": "reviews",
-          "settings": {
-            "header": "آراء العملاء"
-          }
+        "ce26b288-7366-4802-bc96-263d99b69666": {
+          "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
         }
       },
       "block_order": [
         "template--17762998649124__3a3b1170-d4bb-4e95-8454-00e7609c2af1-16759136527f4b0c07-0",
         "template--17762998649124__3a3b1170-d4bb-4e95-8454-00e7609c2af1-16759136527f4b0c07-1",
-        "template--17762998649124__3a3b1170-d4bb-4e95-8454-00e7609c2af1-16759136527f4b0c07-2"
+        "ce26b288-7366-4802-bc96-263d99b69666"
       ],
       "settings": {
         "color_scheme": "background-1",
@@ -207,36 +230,36 @@
     "878a2f1b-9123-4361-8c83-f4548eb90331": {
       "type": "store-policy",
       "blocks": {
-        "template--17762998649124__878a2f1b-9123-4361-8c83-f4548eb90331-167583339458b44b0b-0": {
-          "type": "returns",
-          "settings": {
-            "title": "100 DAY RETURNS"
-          }
-        },
         "template--17762998649124__878a2f1b-9123-4361-8c83-f4548eb90331-167583339458b44b0b-1": {
           "type": "shipping",
           "settings": {
-            "title": "FREE SHIPPING"
+            "title": "Free Delivery"
           }
         },
-        "template--17762998649124__878a2f1b-9123-4361-8c83-f4548eb90331-167583339458b44b0b-2": {
-          "type": "certified",
+        "template--17762998649124__878a2f1b-9123-4361-8c83-f4548eb90331-167583339458b44b0b-0": {
+          "type": "returns",
           "settings": {
-            "title": "CERTIFIED DIAMONDS"
+            "title": "7 Days Return"
           }
         },
         "template--17762998649124__878a2f1b-9123-4361-8c83-f4548eb90331-167583339458b44b0b-3": {
           "type": "size",
           "settings": {
-            "title": "FREE RESIZING"
+            "title": "Exact Size"
+          }
+        },
+        "template--17762998649124__878a2f1b-9123-4361-8c83-f4548eb90331-167583339458b44b0b-2": {
+          "type": "certified",
+          "settings": {
+            "title": "Genuine Product"
           }
         }
       },
       "block_order": [
-        "template--17762998649124__878a2f1b-9123-4361-8c83-f4548eb90331-167583339458b44b0b-0",
         "template--17762998649124__878a2f1b-9123-4361-8c83-f4548eb90331-167583339458b44b0b-1",
-        "template--17762998649124__878a2f1b-9123-4361-8c83-f4548eb90331-167583339458b44b0b-2",
-        "template--17762998649124__878a2f1b-9123-4361-8c83-f4548eb90331-167583339458b44b0b-3"
+        "template--17762998649124__878a2f1b-9123-4361-8c83-f4548eb90331-167583339458b44b0b-0",
+        "template--17762998649124__878a2f1b-9123-4361-8c83-f4548eb90331-167583339458b44b0b-3",
+        "template--17762998649124__878a2f1b-9123-4361-8c83-f4548eb90331-167583339458b44b0b-2"
       ],
       "settings": {
         "color_scheme": "background-1",
@@ -264,7 +287,7 @@
         "template--17762998649124__a7ae7ae5-846f-44e3-b076-606e4997e839-1675929810196cbb8d-2": {
           "type": "button",
           "settings": {
-            "button_label": "شاهد المزيد",
+            "button_label": "Learn More",
             "button_link": ""
           }
         }
@@ -337,7 +360,7 @@
     "product-recommendations": {
       "type": "product-recommendations",
       "settings": {
-        "heading": "قد يعجبك أيضا",
+        "heading": "You May Also Like",
         "heading_size": "h2",
         "products_to_show": 4,
         "columns_desktop": 4,
@@ -354,6 +377,7 @@
   },
   "order": [
     "main",
+    "judgeme_section_review_widget_5618",
     "3a3b1170-d4bb-4e95-8454-00e7609c2af1",
     "878a2f1b-9123-4361-8c83-f4548eb90331",
     "a7ae7ae5-846f-44e3-b076-606e4997e839",

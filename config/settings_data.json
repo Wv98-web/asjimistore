@@ -113,7 +113,7 @@
           "announcement-bar-0": {
             "type": "announcement",
             "settings": {
-              "text": "خصم 10٪ على الطلب الأول للمستخدمين الجدد.",
+              "text": "10% discount on the first order for new users",
               "text_alignment": "center",
               "color_scheme": "background-2",
               "link": ""
@@ -154,21 +154,21 @@
           "7b1a262c-95b6-4256-83c1-400ab4eaa5d0": {
             "type": "email",
             "settings": {
-              "heading": "اشترك في بريدنا الإلكتروني",
+              "heading": "Subscribe",
               "menu": "footer"
             }
           },
           "f0f02518-db2f-49b6-9aa6-9da795bce60c": {
             "type": "link_list",
             "settings": {
-              "heading": "من نحن",
+              "heading": "Who Are We",
               "menu": "link-list-1"
             }
           },
           "footer-0": {
             "type": "link_list",
             "settings": {
-              "heading": "سياستنا",
+              "heading": "Our Policy",
               "menu": "link-list"
             }
           }
@@ -182,7 +182,7 @@
           "color_scheme": "background-2",
           "footer_bg": "shopify:\/\/shop_images\/664a570e5a4aa7ed7abb2b085e680ea1.png",
           "newsletter_enable": false,
-          "newsletter_heading": "اشترك في بريدنا الإلكتروني",
+          "newsletter_heading": "Subscribe to our email",
           "show_social": false,
           "enable_country_selector": false,
           "enable_language_selector": false,
@@ -191,7 +191,7 @@
           "padding_top": 36,
           "padding_bottom": 36,
           "show_theme_copyright": true,
-          "copyright": "جميع الحقوق محفوظة © 2023 مجوهرات جميلة."
+          "copyright": "All rights reserved © 2023 Jamilah Jewelery."
         }
       },
       "main-password-header": {
@@ -209,7 +209,14 @@
         }
       }
     },
-    "content_for_index": []
+    "content_for_index": [],
+    "blocks": {
+      "judgeme_core_1ea7a9b4": {
+        "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/judgeme_core\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "disabled": false,
+        "settings": {}
+      }
+    }
   },
   "presets": {
     "Default": {

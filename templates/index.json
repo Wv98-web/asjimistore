@@ -51,7 +51,7 @@
         "template--17762998452516__8ef39932-4e8d-497b-98dc-d8d18fe1c824-1675650557f769b4b6-3"
       ],
       "settings": {
-        "title": "فئة",
+        "title": "Category",
         "heading_size": "h2",
         "image_ratio": "square",
         "columns_desktop": 4,
@@ -98,7 +98,7 @@
         "template--17762998452516__f04dede5-e882-4c8e-9cf8-215cda59b194-16756520944cb0db8e-0"
       ],
       "settings": {
-        "title": "احجار ملونة",
+        "title": "Colored Stones",
         "heading_size": "h2",
         "image_ratio": "square",
         "columns_desktop": 4,
@@ -113,7 +113,7 @@
     "780fe252-7473-4ed0-8f01-ed88737cb1bf": {
       "type": "featured-collection-1",
       "settings": {
-        "title": "بيع حار",
+        "title": "Hot Sale",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
@@ -140,7 +140,7 @@
     "6af3641d-7bbb-4127-aef8-7ed1cb49b348": {
       "type": "featured-collection-1",
       "settings": {
-        "title": "الجديد في",
+        "title": "New In",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
@@ -201,35 +201,35 @@
     "72d31c71-38e6-4e38-9dac-9439877ec888": {
       "type": "store-policy",
       "blocks": {
+        "template--17762998452516__72d31c71-38e6-4e38-9dac-9439877ec888-16756649858e538d4d-1": {
+          "type": "shipping",
+          "settings": {
+            "title": "Free Delivery"
+          }
+        },
         "template--17762998452516__72d31c71-38e6-4e38-9dac-9439877ec888-16756649858e538d4d-3": {
           "type": "size",
           "settings": {
-            "title": "FREE RESIZING"
+            "title": "Exact Size"
           }
         },
         "template--17762998452516__72d31c71-38e6-4e38-9dac-9439877ec888-16756649858e538d4d-2": {
           "type": "certified",
           "settings": {
-            "title": "CERTIFIED DIAMONDS"
-          }
-        },
-        "template--17762998452516__72d31c71-38e6-4e38-9dac-9439877ec888-16756649858e538d4d-1": {
-          "type": "shipping",
-          "settings": {
-            "title": "FREE SHIPPING"
+            "title": "Genuine Product"
           }
         },
         "template--17762998452516__72d31c71-38e6-4e38-9dac-9439877ec888-16756649858e538d4d-0": {
           "type": "returns",
           "settings": {
-            "title": "100 DAY RETURNS"
+            "title": "7 Days Return"
           }
         }
       },
       "block_order": [
+        "template--17762998452516__72d31c71-38e6-4e38-9dac-9439877ec888-16756649858e538d4d-1",
         "template--17762998452516__72d31c71-38e6-4e38-9dac-9439877ec888-16756649858e538d4d-3",
         "template--17762998452516__72d31c71-38e6-4e38-9dac-9439877ec888-16756649858e538d4d-2",
-        "template--17762998452516__72d31c71-38e6-4e38-9dac-9439877ec888-16756649858e538d4d-1",
         "template--17762998452516__72d31c71-38e6-4e38-9dac-9439877ec888-16756649858e538d4d-0"
       ],
       "settings": {

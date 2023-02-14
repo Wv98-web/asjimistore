@@ -1,5 +1,8 @@
 $(document).ready(function () {
-	let wish_list = [];
+	let wish_list =
+		localStorage.getItem('wishlist') != null && localStorage.getItem('wishlist') != undefined && localStorage.getItem('wishlist')
+			? JSON.parse(localStorage.getItem('wishlist'))
+			: [];
 	let addBtn = $('.add_to_wish');
 
 	addBtn.map((index, item) => {
@@ -7,27 +10,48 @@ $(document).ready(function () {
 		$item.click(function () {
 			const handle = $(this).data('handle');
 
-			JSON.parse(localStorage.getItem('wish_list')).map((prod, index) => {
-        if (prod.handle == handle) {
-          wish_list = JSON.parse(localStorage.getItem('wish_list'))
-				} else {
-					// ajax api
-					$.getJSON(window.Shopify.routes.root + `products/${handle}.js`, function (product) {
-						wish_list.push(product);
-						// 临时存储
-						localStorage.setItem('wish_list', wish_list.length ? JSON.stringify(wish_list) : []);
-
-						isWish();
+			$.getJSON(window.Shopify.routes.root + `products/${handle}.js`, function (data) {
+				if (wish_list.length) {
+					JSON.parse(JSON.stringify(wish_list)).map((item) => {
+						// console.log(`变化`, JSON.parse(JSON.stringify(wish_list)));
+						if (item.handle != handle) {
+							$(item).addClass('checked');
+							// console.log('增');
+							wish_list.push(data);
+						} else {
+							console.log('删');
+							$(item).removeClass('checked');
+							wish_list = JSON.parse(JSON.stringify(wish_list)).filter((prod) => {
+								return prod.handle != handle;
+							});
+						}
 					});
+				} else {
+					$(item).addClass('checked');
+					wish_list.push(data);
 				}
+
+				localStorage.setItem('wishlist', JSON.stringify(wish_list));
+				isWish();
 			});
 		});
 	});
 
 	function isWish() {
-		const wishList = JSON.parse(localStorage.getItem('wish_list'));
+		const localWishlist = localStorage.getItem('wishlist') != null && localStorage.getItem('wishlist') ? JSON.parse(localStorage.getItem('wishlist')) : [];
+		addBtn.map((index, item) => {
+			if (localWishlist.length) {
+				localWishlist.map((product) => {
+					if ($(item).data('handle') == product.handle) {
+						$(item).addClass('checked');
+					}
+				});
+			} else {
+				$(item).removeClass('checked');
+			}
+		});
 
-		let html = wishList.map((product) => {
+		const html = localWishlist.map((product) => {
 			const price = Shopify.formatMoney(product.price, '${{amount}}');
 			const compare_at_price = Shopify.formatMoney(product.compare_at_price, '${{amount}}');
 

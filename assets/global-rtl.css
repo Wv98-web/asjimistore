@@ -21,3 +21,8 @@
     width: 1.4rem;
     height: 1.4rem;
 }
+
+
+.add_to_wish.checked g#页面-1 {
+    fill: red;
+}

@@ -234,7 +234,9 @@
       </div>
 
       <div class="footer-social">
-        <h2 style="text-align: center;">اتبعنا</h2>
+        <h2 style="text-align: center;">
+          {{ section.settings.social_header }}
+        </h2>
         <ul class="footer__list-social list-unstyled list-social" role="list">
           {%- if settings.social_twitter_link != blank -%}
             <li class="list-social__item">
@@ -831,6 +833,11 @@
     }
   ],
   "settings": [
+    {
+      "type": "text",
+      "id": "social_header",
+      "label": "社媒标题"
+    },
     {
       "type": "select",
       "id": "color_scheme",

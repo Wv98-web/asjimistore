@@ -26,6 +26,10 @@
             <ul class="tab-header list-unstyled">
                 {%- for block in section.blocks -%}
                     {%- case block.type -%}
+                        {% when '@app' %}
+                            <li class="tab-header__item" class="tab-header__item" {{ block.shopify_attributes }}>
+                                {{ section.settings.reviews_header }}
+                            </li>
                         {% when 'reviews' %}
                             <li class="tab-header__item" class="tab-header__item" {{ block.shopify_attributes }}>
                                 {{ block.settings.header }}
@@ -48,30 +52,13 @@
             <div class="tab-content">
                 {%- for block in section.blocks -%}
                     {%- case block.type -%}
+                        {%- when '@app' -%}
+                            <div class="tab-content__item" {{ block.shopify_attributes}}>
+                                {% render block %}
+                            </div>
                         {%- when 'reviews' -%}
                             <div class="tab-content__item" {{ block.shopify_attributes }}>
                                 product reviews
-                                {% comment %} <div class="panel entry-content sp-tab des_mb_{{cl_mb}} des_style_{{cl_des}}{% if ck %} active{% assign ck = false %}{% else %} dn{% endif %}" data-id-reviewt4s id="tab_{{block.id}}" {{ block.shopify_attributes }}>
-                                    <div class="js_ck_view"></div><div class="heading bgbl dn"><a class="tab-heading flex al_center fl_between pr cd chp fwm" href="#tab_{{block.id}}"><span class="txt_h_tab">{{bk_setts.title}}</span><span class="nav_link_icon ml__5"></span></a></div>
-                                    <div class="sp-tab-content">
-                                    {%- case settings.app_review -%}                        
-                                        {%- when '1' -%}
-                                            <div id="shopify-product-reviews" data-id="{{pid}}">{{ product.metafields.spr.reviews }}</div>
-                                        {%- when '2' -%}
-                                            <div class="lt-block-reviews"><ryviu-widget handle="{{product.handle}}" title_product="{{product.title}}" total_meta="{{ product.metafields.ryviu.r_count }}" image_product="{{ product.featured_image.src | img_url: '800x' }}"></ryviu-widget></div>
-                                        {%- when '3' -%}
-                                            <div id="shopify-ali-review" product-id="{{ pid }}">{{ shop.metafields.review_collector.review_code }}</div>
-                                        {%- when '4' -%}
-                                            <div id="looxReviews" data-product-id="{{pid}}" class="loox-reviews-default">{{ product.metafields.loox.reviews }}</div>
-                                        {%- when '5' -%}
-                                            {%- capture the_snippet_reviews %}{% render 'socialshopwave-widget-recommends' with 1 %}{% endcapture -%}
-                                            {%- unless the_snippet_reviews contains 'Liquid error' %}{{ the_snippet_reviews }}{% endunless -%}
-                                        {%- when '7' -%}{%- render 'judgeme_widgets', widget_type: 'judgeme_review_widget', concierge_install: true, product: product -%}
-                                        {%- else -%}
-                                        <div class="star-rating review_widget_other">{{bk_setts.review_liquid}}</div>
-                                    {%- endcase -%}
-                                    </div>
-                                </div> {% endcomment %}
                             </div>
     
                         {%- when 'social_share' -%}
@@ -208,6 +195,12 @@
     "class": "section",
     "settings": [
         {
+            "type": "text",
+            "id": "reviews_header",
+            "label": "选项卡评论标题",
+            "default": "Customer Reviews"
+        },
+        {
             "type": "select",
             "id": "color_scheme",
             "options": [
@@ -261,7 +254,10 @@
             "default": 36
         }
     ],
-    "blocks": [
+    "blocks": [    
+        {
+            "type": "@app"
+        },
         {
             "type": "reviews",
             "name": "产品评论",
