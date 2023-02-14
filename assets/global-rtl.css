@@ -42,3 +42,30 @@
 .cart__swiper .card--standard>.card__content .card__information {
     padding-bottom: 0;
 }
+
+
+.menu-drawer__menu-onepage .menu-drawer__menu-item .icon-caret,
+.menu-drawer__menu-onepage .menu-drawer .icon-arrow {
+    display: inline-block !important;
+}
+
+.menu-drawer__menu-onepage .menu-drawer__menu li {
+    border-top: 1px solid rgba(151, 151, 151, 0.1);
+}
+
+.menu-drawer__menu-onepage .menu-drawer__menu-item--active {
+    color: #fff;
+    background-color: #EF422B;
+}
+
+.menu-drawer .list-social {
+    margin-top: 0 !important;
+    gap: 1rem;
+}
+
+.menu-drawer .list-social__link {
+    color: rgb(var(--color-base-background-2));
+    border-radius: 50%;
+    padding: 1rem !important;
+    background-color: #fff;
+}

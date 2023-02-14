@@ -189,7 +189,61 @@
           <div id="menu-drawer" class="gradient menu-drawer motion-reduce" tabindex="-1">
             <div class="menu-drawer__inner-container">
               <div class="menu-drawer__navigation-container">
-                <nav class="menu-drawer__navigation">
+                <nav class="menu-drawer__navigation" style="padding: 3rem 0;">
+                  {%- if section.settings.draw_menu_onepage -%}
+                  <ul class="list-menu menu-drawer__menu-onepage" role="list">
+                    {%- for link in section.settings.menu.links -%}
+                      <li style="background: rgba(var(--color-base-background-2), 0.2); border-top: 1px solid rgba(151, 151, 151, 0.1);">
+                        {%- if link.links != blank -%}
+                          <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
+                            <summary class="menu-drawer__menu-item list-menu__item link link--text focus-inset">
+                              {{ link.title | escape }}
+                              {% render 'icon-caret' %}
+                            </summary>
+                            <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1" style="background: #fff;">
+                              {%- for childlink in link.links -%}
+                                <li>
+                                  {%- if childlink.links == blank -%}
+                                    <a href="{{ childlink.url }}" class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if childlink.current %} menu-drawer__menu-item--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
+                                      {{ childlink.title | escape }}
+                                    </a>
+                                  {%- else -%}
+                                    <details id="Details-menu-drawer-submenu-{{ forloop.index }}">
+                                      <summary class="menu-drawer__menu-item link link--text list-menu__item focus-inset">
+                                        {{ childlink.title | escape }}
+                                        {% render 'icon-arrow' %}
+                                        {% render 'icon-caret' %}
+                                      </summary>
+                                      <div id="childlink-{{ childlink.handle | escape }}" class="menu-drawer__submenu has-submenu gradient motion-reduce">
+                                        <button class="menu-drawer__close-button link link--text focus-inset" aria-expanded="true">
+                                          {% render 'icon-arrow' %}
+                                          {{ childlink.title | escape }}
+                                        </button>
+                                        <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
+                                          {%- for grandchildlink in childlink.links -%}
+                                            <li>
+                                              <a href="{{ grandchildlink.url }}" class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %}"{% if grandchildlink.current %} aria-current="page"{% endif %}>
+                                                {{ grandchildlink.title | escape }}
+                                              </a>
+                                            </li>
+                                          {%- endfor -%}
+                                        </ul>
+                                      </div>
+                                    </details>
+                                  {%- endif -%}
+                                </li>
+                              {%- endfor -%}
+                            </ul>
+                          </details>
+                        {%- else -%}
+                          <a href="{{ link.url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"{% if link.current %} aria-current="page"{% endif %}>
+                            {{ link.title | escape }}
+                          </a>
+                        {%- endif -%}
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                  {%- else -%}
                   <ul class="menu-drawer__menu has-submenu list-menu" role="list">
                     {%- for link in section.settings.menu.links -%}
                       <li>
@@ -251,9 +305,20 @@
                       </li>
                     {%- endfor -%}
                   </ul>
+                  {%- endif -%}
                 </nav>
-                <div class="menu-drawer__utility-links">
-                  {%- if shop.customer_accounts_enabled -%}
+
+                <div style="width: 100%;
+                  background-image: url(https://cdn.shopify.com/s/files/1/0714/8617/7572/files/divide.png);
+                  background-size: contain;
+                  background-position: center;
+                  height: 5rem;
+                  margin-bottom: 2rem;">
+                  <span class="hidden">chatu</span>
+                </div>
+
+                <div class="menu-drawer__utility-links" style="background-color: rgba(var(--color-base-background-2), 1);">
+                  {% comment %} {%- if shop.customer_accounts_enabled -%}
                     <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="menu-drawer__account link focus-inset h5">
                       {% render 'icon-account' %}
                       {%- liquid
@@ -264,7 +329,7 @@
                         endif
                       -%}
                     </a>
-                  {%- endif -%}
+                  {%- endif -%} {% endcomment %}
                   <ul class="list list-social list-unstyled" role="list">
                     {%- if settings.social_twitter_link != blank -%}
                       <li class="list-social__item">
@@ -1425,6 +1490,12 @@
       "default": "dropdown",
       "label": "t:sections.header.settings.menu_type_desktop.label",
       "info": "t:sections.header.settings.menu_type_desktop.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "draw_menu_onepage",
+      "label": "侧边栏菜单一页展示",
+      "default": false
     },
     {
       "type": "checkbox",
