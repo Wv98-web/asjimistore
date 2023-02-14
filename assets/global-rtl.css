@@ -26,3 +26,19 @@
 .add_to_wish.checked g#页面-1 {
     fill: red;
 }
+
+.cart__footer .field:after .cart__footer .field:hover.field:after,
+.cart__footer .field__input:focus-visible {
+    border-radius: var(--inputs-radius) var(--inputs-radius) 0 var(--inputs-radius);
+}
+
+.quantity__button:focus-visible,
+.quantity__input:focus-visible {
+    box-shadow: 0 0 0 0.2rem rgb(var(--color-base-background-2)), 0 0 0.5rem 0.4rem rgba(var(--color-base-background-2), .3);
+    outline: 0;
+}
+
+/* 购物车推荐轮播 */
+.cart__swiper .card--standard>.card__content .card__information {
+    padding-bottom: 0;
+}

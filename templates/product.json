@@ -41,7 +41,7 @@
           "type": "variant_picker",
           "settings": {
             "picker_type": "button",
-            "text": "دليل المقاسات",
+            "text": "Size guide",
             "page": "{{ product.metafields.product.size_chart.value }}"
           }
         },
@@ -222,6 +222,7 @@
         "ce26b288-7366-4802-bc96-263d99b69666"
       ],
       "settings": {
+        "reviews_header": "Customer Reviews",
         "color_scheme": "background-1",
         "padding_top": 36,
         "padding_bottom": 36

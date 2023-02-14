@@ -465,7 +465,6 @@
     {%- endif -%}
 
     {% comment %} AR START {% endcomment %}
-    {% if shop.locale contains 'ar' %}
     <div class="header__search-input" style="grid-area: navigation;">
       <div class="search-modal__content{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} search-modal__content-top{% else %} search-modal__content-bottom{% endif %}" tabindex="-1">
         {%- if settings.predictive_search_enabled -%}
@@ -587,9 +586,9 @@
         {%- endif -%}
       </div>
     </div>
-    {% else %}
     {% comment %} AR END {% endcomment %}
-    {%- if section.settings.menu != blank -%}
+
+    {% comment %} {%- if section.settings.menu != blank -%}
       {%- if section.settings.menu_type_desktop == 'dropdown' -%}
         <nav class="header__inline-menu">
           <ul class="list-menu list-menu--inline" role="list">
@@ -686,10 +685,7 @@
           </ul>
         </nav>
       {%- endif -%}
-    {%- endif -%}
-    {% comment %} AR START {% endcomment %}
-    {%- endif -%}
-    {% comment %} AR END {% endcomment %}
+    {%- endif -%} {% endcomment %}
 
     {%- if section.settings.logo_position == 'middle-center' -%}
       {%- if request.page_type == 'index' -%}
@@ -766,7 +762,153 @@
       
       <div class="currency-selector doubly-wrapper"></div>
                          
-      <details-modal class="header__search">
+      {% comment %} 新的搜索模块 {% endcomment %}
+      <details-modal class="header__search large-up-hide">
+        <details>
+          <summary class="header__icon header__icon--search header__icon--summary link focus-inset modal__toggle" aria-haspopup="dialog" aria-label="{{ 'general.search.search' | t }}">
+            <span>
+              <svg class="modal__toggle-open icon icon-search" aria-hidden="true" focusable="false" role="presentation">
+                <use href="#icon-search">
+              </svg>
+              <svg class="modal__toggle-close icon icon-close" aria-hidden="true" focusable="false" role="presentation">
+                <use href="#icon-close">
+              </svg>
+            </span>
+          </summary>
+          <div class="search-modal modal__content gradient" role="dialog" aria-modal="true" aria-label="{{ 'general.search.search' | t }}" style="height: calc(100vh / 2); ">
+            <div class="modal-overlay"></div>
+            <div class="search-modal__content{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} search-modal__content-top{% else %} search-modal__content-bottom{% endif %}" tabindex="-1" style="flex-direction: column; justify-content: unset; overflow-y: auto; padding: 1rem;">
+              <div style="display: flex; align-items: center; justify-content: center; padding: 0 1rem 0 5rem;">
+                {%- if settings.predictive_search_enabled -%}
+                  <predictive-search class="search-modal__form" data-loading-text="{{ 'accessibility.loading' | t }}">
+                {%- endif -%}
+                  <form action="{{ routes.search_url }}" method="get" role="search" class="search search-modal__form">
+                    <div class="field">
+                      <input class="search__input field__input"
+                        id="Search-In-Modal"
+                        type="search"
+                        name="q"
+                        value=""
+                        placeholder="{{ 'general.search.search' | t }}"
+                        {%- if settings.predictive_search_enabled -%}
+                          role="combobox"
+                          aria-expanded="false"
+                          aria-owns="predictive-search-results-list"
+                          aria-controls="predictive-search-results-list"
+                          aria-haspopup="listbox"
+                          aria-autocomplete="list"
+                          autocorrect="off"
+                          autocomplete="off"
+                          autocapitalize="off"
+                          spellcheck="false"
+                        {%- endif -%}
+                      >
+                      <label class="field__label" for="Search-In-Modal">{{ 'general.search.search' | t }}</label>
+                      <input type="hidden" name="options[prefix]" value="last">
+                      <button class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
+                        <svg class="icon icon-search" aria-hidden="true" focusable="false" role="presentation">
+                          <use href="#icon-search">
+                        </svg>
+                      </button>
+                    </div>
+
+                    {%- if settings.predictive_search_enabled -%}
+                      <div class="predictive-search predictive-search--header" tabindex="-1" data-predictive-search>
+                        <div class="predictive-search__loading-state">
+                          <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                            <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                          </svg>
+                        </div>
+                      </div>
+
+                      <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
+                    {%- endif -%}
+                  </form>
+                {%- if settings.predictive_search_enabled -%}
+                  </predictive-search>
+                {%- endif -%}
+                <button type="button" class="search-modal__close-button modal__close-button link link--text focus-inset" aria-label="{{ 'accessibility.close' | t }}">
+                  <svg class="icon icon-close" aria-hidden="true" focusable="false" role="presentation">
+                    <use href="#icon-close">
+                  </svg>
+                </button>
+              </div>
+
+              <div class="drawer-search">
+                {%- if section.settings.search_hot_list != blank -%}
+                  <div class="search-hot-list" style="margin-bottom: 4rem">
+                    {%- for link in section.settings.search_hot_list.links -%}
+                      <a class="search-hot__item full-unstyled-link" href={{ link.url }} target="_blank">
+                        <div class="hot-content"><span class="search_icon">{% render 'icon-hot-search' %}</span><span class="search_name">{{ link.title | escape }}</span></div>
+                      </a>
+                    {%- endfor -%}
+                  </div>
+                {%- endif -%}
+        
+                {%- if section.settings.divide_image != blank -%}
+                  <div class="search-divide" style="width: 100%; height: 50px; margin-bottom: 4rem; background-image: url({{ section.settings.divide_image | img_url: "master" }});">
+                    <span class="hidden">DIVIDE</span>
+                  </div>
+                {%- endif -%}
+        
+                {%- if section.settings.search_collection.products_count > 0 -%}
+                  <div class="search-collection-list page-width gradient collection-list contains-card contains-card--collection contains-card--standard grid grid--4-col-desktop grid--2-col-tablet-down collection-list--4-items" style="width: 100%;">
+                    {%- for product in section.settings.search_collection.products limit: 4 -%}
+                      <div class="collection-list__item grid__item">
+                        <div class="card-wrapper animate-arrow collection-card-wrapper">
+                          <div class="card card--standard card--media" style="--ratio-percent: 100%;">
+                            <div class="card__inner color-background-1 gradient ratio" style="--ratio-percent: 100%; border-radius: 8px; border: 1px solid #26AC97;">
+                              <div class="card__media">
+                                <div class="media media--transparent media--hover-effect" style="border-radius: 8px;">
+                                  <img
+                                    srcset="{%- if product.images[0].width >= 165 -%}{{ product.images[0] | image_url: width: 165 }} 165w,{%- endif -%}
+                                      {%- if product.images[0].width >= 330 -%}{{ product.images[0] | image_url: width: 330 }} 330w,{%- endif -%}
+                                      {%- if product.images[0].width >= 535 -%}{{ product.images[0] | image_url: width: 535 }} 535w,{%- endif -%}
+                                      {%- if product.images[0].width >= 750 -%}{{ product.images[0] | image_url: width: 750 }} 750w,{%- endif -%}
+                                      {%- if product.images[0].width >= 1000 -%}{{ product.images[0] | image_url: width: 1000 }} 1000w,{%- endif -%}
+                                      {%- if product.images[0].width >= 1500 -%}{{ product.images[0] | image_url: width: 1500 }} 1500w,{%- endif -%}
+                                      {%- if product.images[0].width >= 3000 -%}{{ product.images[0] | image_url: width: 3000 }} 3000w,{%- endif -%}
+                                      {{ product.images[0] | image_url }} {{ product.images[0].width }}w"
+                                    src="{{ product.images[0] | image_url: width: 1500 }}"
+                                    sizes="
+                                    (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 4 }}px,
+                                    (min-width: 750px) {% if 4 > 1 %}calc((100vw - 10rem) / 2){% else %}calc(100vw - 10rem){% endif %},
+                                    calc(100vw - 3rem)"
+                                    alt=""
+                                    height="{{ product.images[0].height }}"
+                                    width="{{ product.images[0].width }}"
+                                    loading="lazy"
+                                    class="motion-reduce"
+                                  >
+                                </div>
+                              </div>
+                            </div>
+          
+                            <div class="card__content">
+                              <div class="card__information">
+                                <h3 class="card__heading" style="text-align: center;">
+                                  <a href="{{ product.url }}" class="full-unstyled-link">
+                                      {{- product.handle | escape -}}
+                                  </a>
+                                </h3>
+                              </div>   
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    {%- endfor -%}
+                  </div>
+                {%- endif -%}
+              
+              </div>
+            </div>
+          </div>
+        </details>
+      </details-modal>
+      {% comment %} 新的搜索模块 {% endcomment %}
+
+      {% comment %} 旧的搜索模块 {% endcomment %}
+      <details-modal class="header__search hidden">
         <details>
           <summary class="header__icon header__icon--search header__icon--summary link focus-inset modal__toggle" aria-haspopup="dialog" aria-label="{{ 'general.search.search' | t }}">
             <span>
@@ -838,6 +980,7 @@
           </div>
         </details>
       </details-modal>
+      {% comment %} 旧的搜索模块 {% endcomment %}
 
       {%- if shop.customer_accounts_enabled -%}
         <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
@@ -875,7 +1018,6 @@
     </div>
   </header>
   {% comment %} AR START {% endcomment %}
-  {% if shop.locale contains 'ar' %}
   {%- if section.settings.menu != blank -%}
     {%- if section.settings.menu_type_desktop == 'dropdown' -%}
       <nav class="header__inline-menu header__inline-menu-bottom">
@@ -973,7 +1115,6 @@
         </ul>
       </nav>
     {%- endif -%}
-  {%- endif -%}
   {%- endif -%}
   {% comment %} AR END {% endcomment %}
 </{% if section.settings.enable_sticky_header %}sticky-header{% else %}div{% endif %}>

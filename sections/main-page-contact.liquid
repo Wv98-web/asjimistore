@@ -108,7 +108,7 @@
             <label class="form__label field__label" for="ContactForm-body">{{ 'templates.contact.form.comment' | t }}</label>
           </div>
           <div class="contact__button">
-            <button type="submit" class="button">
+            <button type="submit" class="button" style="width: 100%;">
               {{ 'templates.contact.form.send' | t }}
             </button>
           </div>
@@ -116,7 +116,7 @@
       </div>
     </div>
 
-    <div class="grid__item rte">
+    <div class="grid__item rte" style="border: 1px solid rgb(var(--color-base-background-2)); padding: 0 2rem; border-radius: var(--inputs-radius);">
       {{ page.content }}
     </div>
   </div>
