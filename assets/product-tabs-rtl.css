@@ -5,12 +5,8 @@
 }
 
 .tab-header__item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     max-width: calc(100% / 3);
-    height: 4rem;
-    padding: 0 2rem;
+    padding: 1rem 2rem;
     border: 1px solid transparent;
     border-radius: 2.2rem;
     text-align: center;
@@ -78,6 +74,6 @@
 
     .tab-header__item {
         width: 100%;
-        padding: 0;
+        padding: 1rem;
     }
 }

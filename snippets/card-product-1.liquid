@@ -23,7 +23,6 @@
 {% else %}
 {{ 'component-rating.css' | asset_url | stylesheet_tag }}
 {% endif %}
-{% comment %} <script src="{{ 'wishlist.js' | asset_url }}" defer="defer"></script> {% endcomment %}
 
 
 {%- if card_product and card_product != empty -%}
@@ -140,13 +139,9 @@
             {%- endif -%}
           </div>
 
-          <wish-list class="card__badge top right card__wish add_to_wish" data-handle="{{ card_product.handle }}" style="z-index: 2;">
-            <heart class="card__wish-item heart">
-              {%- if false -%}
-                {% render 'icon-heart-full' %}
-              {%- else -%}
-                {% render 'icon-heart' %}
-              {%- endif -%}
+          <wish-list class="card__badge top right card__wish" style="z-index: 2;">
+            <heart class="card__wish-item heart add_to_wish" data-handle="{{ card_product.handle }}">
+              {% render 'icon-heart' %}
             </heart>
           </wish-list>
         </div>
