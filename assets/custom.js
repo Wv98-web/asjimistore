@@ -49,9 +49,8 @@ function wishListRender() {
                   </a>
                 </h3>
               </div>
-    
-              <div class="card__badge top right card__wish add_to_wish" data-handle=${product.handle} style="z-index: 2;">
-                <div class="card__wish-item">
+              <wish-list class="card__badge top right card__wish" style="z-index: 2;">
+                <heart class="card__wish-item heart add_to_wish" data-handle="${product.handle}">
                   <svg
                     viewBox="0 0 20 19"
                     version="1.1"
@@ -67,8 +66,8 @@ function wishListRender() {
                         </g>
                     </g>
                   </svg>
-                </div>
-              </div>
+                </heart>
+              </wish-list>
             </div>
           </div>
           <div class="card__content">
@@ -110,51 +109,54 @@ function wishListRender() {
     </li>`;
 	});
 
-	$('#wishlist').html(html);
+	$('#wishlist')
+		.html(html)
+		.promise()
+		.done(function () {});
 }
 
 function addToWish() {
-	let addBtns = $('.add_to_wish');
-	let wish_list =
-		localStorage.getItem('wishlist') != null && localStorage.getItem('wishlist') != undefined && localStorage.getItem('wishlist')
-			? JSON.parse(localStorage.getItem('wishlist'))
-			: [];
+	$('.add_to_wish').click(function () {
+		let wish_list =
+			localStorage.getItem('wishlist') != null && localStorage.getItem('wishlist') != undefined && localStorage.getItem('wishlist')
+				? JSON.parse(localStorage.getItem('wishlist'))
+				: [];
+		let tp_handles = [];
 
-	console.log(addBtns);
-	addBtns.click(function () {
-		console.log($(this).get(0));
+		wish_list.map(function (item) {
+			tp_handles.push(item.handle);
+		});
+
 		const _self = $(this);
 		const handle = $(this).data('handle');
-		$.getJSON(window.Shopify.routes.root + `products/${handle}.js`, function (data) {
-			if (wish_list.length) {
-				wish_list.map((item) => {
-					if (item.handle != handle) {
-						console.log('增');
-						_self.addClass('checked');
-						wish_list.push(data);
-					} else {
-						console.log('删');
-						_self.removeClass('checked');
-						wish_list = wish_list.filter((prod) => {
-							return prod.handle != handle;
-						});
-					}
-				});
-			} else {
-				_self.addClass('checked');
-				wish_list.push(data);
-			}
 
-			localStorage.setItem('wishlist', JSON.stringify(wish_list));
-		});
+		console.log($(this).get(0));
+
+		if (!tp_handles.includes(handle)) {
+			// add
+			_self.addClass('checked');
+			$.getJSON(window.Shopify.routes.root + `products/${handle}.js`, function (data) {
+				wish_list.push(data);
+
+				localStorage.setItem('wishlist', JSON.stringify(wish_list));
+				wishListRender();
+			});
+		} else {
+			// remove
+			_self.removeClass('checked');
+			let fresh_wish_list = wish_list.filter(function (item) {
+				return item.handle != handle;
+			});
+
+			localStorage.setItem('wishlist', JSON.stringify(fresh_wish_list));
+			wishListRender();
+		}
 	});
 }
 
 $(document).ready(function () {
-	console.log('render start');
 	wishListRender();
 	addToWish();
-	console.log('render end');
 });
 
 var Shopify = Shopify || {};

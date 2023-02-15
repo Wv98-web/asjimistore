@@ -1,5 +1,8 @@
-@media screen and (max-width: 749px) {}
-
+.icon-heart {
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
 
 .card__wish {
     display: flex;
@@ -22,8 +25,7 @@
     height: 1.4rem;
 }
 
-
-.add_to_wish.checked g#页面-1 {
+.card__wish-item svg.checked {
     fill: red;
 }
 
