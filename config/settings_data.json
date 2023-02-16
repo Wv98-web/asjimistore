@@ -114,7 +114,7 @@
           "announcement-bar-0": {
             "type": "announcement",
             "settings": {
-              "text": "10% off on the first order for new users.",
+              "text": "10٪ خصم على أول طلب للمستخدمين الجدد.",
               "text_alignment": "center",
               "color_scheme": "background-2",
               "link": ""
@@ -156,21 +156,21 @@
           "7b1a262c-95b6-4256-83c1-400ab4eaa5d0": {
             "type": "email",
             "settings": {
-              "heading": "Subscribe to our email",
+              "heading": "اشترك في بريدنا الإلكتروني",
               "menu": "footer"
             }
           },
           "f0f02518-db2f-49b6-9aa6-9da795bce60c": {
             "type": "link_list",
             "settings": {
-              "heading": "Who Are We",
+              "heading": "من نحن",
               "menu": "link-list-1"
             }
           },
           "footer-0": {
             "type": "link_list",
             "settings": {
-              "heading": "Our Policy",
+              "heading": "سياستنا",
               "menu": "link-list"
             }
           }
@@ -181,12 +181,12 @@
           "footer-0"
         ],
         "settings": {
-          "social_header": "Social",
+          "social_header": "منصة اجتماعية",
           "color_scheme": "background-2",
           "footer_bg": "shopify:\/\/shop_images\/664a570e5a4aa7ed7abb2b085e680ea1.png",
           "footer_bg_m": "shopify:\/\/shop_images\/about_us_banner.png",
           "newsletter_enable": false,
-          "newsletter_heading": "Subscribe to our email",
+          "newsletter_heading": "اشترك في بريدنا الإلكتروني",
           "show_social": false,
           "enable_country_selector": false,
           "enable_language_selector": false,
@@ -195,7 +195,7 @@
           "padding_top": 36,
           "padding_bottom": 36,
           "show_theme_copyright": true,
-          "copyright": "All rights reserved © 2023 Jamilah Jewelery."
+          "copyright": "جميع الحقوق محفوظة © مجوهرات جميلة 2023."
         }
       },
       "main-password-header": {

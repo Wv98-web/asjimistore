@@ -51,7 +51,7 @@
         "template--17762998452516__8ef39932-4e8d-497b-98dc-d8d18fe1c824-1675650557f769b4b6-3"
       ],
       "settings": {
-        "title": "Category",
+        "title": "فئة",
         "heading_size": "h2",
         "image_ratio": "square",
         "columns_desktop": 4,
@@ -98,7 +98,7 @@
         "template--17762998452516__f04dede5-e882-4c8e-9cf8-215cda59b194-16756520944cb0db8e-0"
       ],
       "settings": {
-        "title": "Colored Stones",
+        "title": "احجار ملونة",
         "heading_size": "h2",
         "image_ratio": "square",
         "columns_desktop": 4,
@@ -113,7 +113,7 @@
     "780fe252-7473-4ed0-8f01-ed88737cb1bf": {
       "type": "featured-collection-1",
       "settings": {
-        "title": "Hot Sale",
+        "title": "بيع حار",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
@@ -140,7 +140,7 @@
     "6af3641d-7bbb-4127-aef8-7ed1cb49b348": {
       "type": "featured-collection-1",
       "settings": {
-        "title": "New In",
+        "title": "الجديد في",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
@@ -204,25 +204,25 @@
         "template--17762998452516__72d31c71-38e6-4e38-9dac-9439877ec888-16756649858e538d4d-1": {
           "type": "shipping",
           "settings": {
-            "title": "Free Delivery"
+            "title": "التوصيل المجاني"
           }
         },
         "template--17762998452516__72d31c71-38e6-4e38-9dac-9439877ec888-16756649858e538d4d-3": {
           "type": "size",
           "settings": {
-            "title": "Exact Size"
+            "title": "الحجم الدقيق"
           }
         },
         "template--17762998452516__72d31c71-38e6-4e38-9dac-9439877ec888-16756649858e538d4d-2": {
           "type": "certified",
           "settings": {
-            "title": "Genuine Product"
+            "title": "منتج أصلي"
           }
         },
         "template--17762998452516__72d31c71-38e6-4e38-9dac-9439877ec888-16756649858e538d4d-0": {
           "type": "returns",
           "settings": {
-            "title": "7 Days Return"
+            "title": "عودة لمدة 7 أيام"
           }
         }
       },
