@@ -2,7 +2,6 @@ function wishListRender() {
 	let localWishlist = localStorage.getItem('wishlist') != null && localStorage.getItem('wishlist') ? JSON.parse(localStorage.getItem('wishlist')) : [];
 
 	const hearts = document.querySelectorAll('.add_to_wish');
-	console.log(hearts)
 	Array.prototype.map.call(hearts, function (item) {
 		if (localWishlist.length) {
 			localWishlist.map((product) => {
@@ -106,9 +105,9 @@ function wishListRender() {
 	$('#wishlist').html(html);
 }
 
-window.onload = function () {
+$(function () {
 	wishListRender();
-};
+});
 
 class WishList extends HTMLElement {
 	constructor() {

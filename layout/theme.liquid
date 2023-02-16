@@ -31,6 +31,7 @@
 
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'alifonts.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'wishlist.js' | asset_url }}" defer="defer"></script>
     {{ content_for_header }}
 
     {%- liquid
@@ -361,6 +362,5 @@
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
     {{ 'doubly.js' | asset_url | script_tag }}
-    <script src="{{ 'wishlist.js' | asset_url }}" defer="defer"></script>
   </body>
 </html>
