@@ -41,11 +41,9 @@
                             </li>
     
                         {% when 'description' %}
-                            {%- if product.metafields.product.height != blank and product.metafields.product.material != blank and product.metafields.product.category != blank and product.metafields.product.shipping_and_delivery != blank and product.metafields.product.package_image != blank -%}
                             <li class="tab-header__item active" {{ block.shopify_attributes }}>
                                 {{ block.settings.header }}
                             </li>
-                            {%- endif -%}
                             
                     {%- endcase -%}
                 {%- endfor -%}
@@ -65,6 +63,13 @@
     
                         {%- when 'social_share' -%}
                             <div class="tab-content__item" {{ block.shopify_attributes }}>
+                                {%- if product.description != blank -%}
+                                <div class="product__description rte quick-add-hidden" style="margin-bottom: 2rem;">
+                                    {{ product.description }}
+                                </div>
+                                {%- endif -%}
+
+                                {%- if block.settings.show_social -%}
                                 <p>{{ block.settings.text }}</p>
                                 
                                 <ul class="list-unstyled list-social product__list-social" role="list">
@@ -141,15 +146,15 @@
                                         </li>
                                     {%- endif -%}
                                 </ul>
+                                {%- endif -%}
                             </div>
     
                         {%- when 'description' -%}
-                            {%- if product.metafields.product.height != blank and product.metafields.product.material != blank and product.metafields.product.category != blank and product.metafields.product.shipping_and_delivery != blank and product.metafields.product.package_image != blank -%}
                             <div class="tab-content__item tab-content__des active" {{ block.shopify_attributes }}>
-                                {%- if product.metafields.product.height != blank -%}
+                                {%- if product.metafields.custom.weight != blank -%}
                                     <div class="grid">
-                                        <div class="grid--header">{{ block.settings.height }}:</div>
-                                        <div class="grid--content">{{ product.metafields.product.height }}</div>
+                                        <div class="grid--header">{{ block.settings.weight }}:</div>
+                                        <div class="grid--content">{{ product.metafields.custom.weight }}</div>
                                     </div>
                                 {%- endif -%}
 
@@ -183,7 +188,6 @@
                                 </div>
                                 {%- endif -%}
                             </div>
-                            {%- endif -%}
                     {%- endcase -%}
                 {%- endfor -%}
             </div>
@@ -283,9 +287,15 @@
                     "label": "标题"
                 },
                 {
+                    "type": "checkbox",
+                    "id": "show_social",
+                    "label": "展示社媒",
+                    "default": false
+                },
+                {
                     "type": "text",
                     "id": "text",
-                    "label": "二级标题"
+                    "label": "分享二级标题"
                 }
             ]
         },
@@ -300,9 +310,9 @@
                 },
                 {
                     "type": "text",
-                    "id": "height",
-                    "label": "标题(高度)",
-                    "default": "Hight"
+                    "id": "weight",
+                    "label": "标题(重量)",
+                    "default": "Weight"
                 },
                 {
                     "type": "text",

@@ -5,6 +5,7 @@
       "blocks": {
         "vendor": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "{{ product.vendor }}",
             "text_style": "uppercase"
@@ -41,6 +42,8 @@
           "type": "variant_picker",
           "settings": {
             "picker_type": "button",
+            "switch_style": "custom",
+            "color_ck": "",
             "text": "Size guide",
             "page": "{{ product.metafields.product.size_chart.value }}"
           }
@@ -97,8 +100,8 @@
         },
         "share": {
           "type": "share",
-          "disabled": true,
           "settings": {
+            "show_social_icon": true,
             "share_label": "Share"
           }
         },
@@ -181,7 +184,7 @@
           "type": "description",
           "settings": {
             "header": "Product Information",
-            "height": "Hight",
+            "weight": "Weight",
             "material": "Material",
             "category": "Category",
             "shipping_and_delivery": "Shipping and delivery",

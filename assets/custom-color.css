@@ -1,0 +1,22 @@
+.lazyloadt4sed {
+    border-radius: 50% !important;
+    padding: 1.6rem !important;
+    font-size: 0 !important;
+    line-height: 0 !important;
+    margin: 0 !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.product-form__input input[type=radio]+label.lazyloadt4sed {
+    border-color: transparent !important;
+}
+
+.product-form__input input[type=radio]:checked+label.lazyloadt4sed {
+    background-color: unset;
+    border-color: transparent !important;
+    box-shadow: 0 0 0 calc(0.1rem + var(--inputs-border-width)) rgba(239, 66, 43, 1) !important;
+}
+
+/*! Code css #dd1184f7-9ddf-46f4-ac4c-65c1f73443bf */ .bg_color_red-and-green{background-color: #ff0000 !important;background: -webkit-linear-gradient(#ff0000 50%, #008000 50%);background: -o-linear-gradient(#ff0000 50%, #008000 50%);background: -moz-linear-gradient(#ff0000 50%, #008000 50%);background: linear-gradient(#ff0000 50%, #008000 50%);}.bg_color_green{background-color: #008000 !important;}.bg_color_blue{background-color: #0000ff !important;}.bg_color_red{background-color: #ff0000 !important;}.bg_color_yellow{background-color: #ffff00 !important;}.bg_color_black{background-color: #000000 !important;}.bg_color_purple{background-color: #800080 !important;}.bg_color_marble{background-color: #4d5310 !important;}.bg_color_gloden{background-color: #ffd700 !important;}.bg_color_silver{background-color: #c0c0c0 !important;}

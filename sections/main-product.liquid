@@ -484,6 +484,82 @@
                 {{- block.settings.text -}}
               </a>
             {%- when 'share' -%}
+              {%- if block.settings.show_social_icon -%}
+              <ul class="list-unstyled list-social product__list-social" role="list">
+                {%- if settings.social_twitter_link != blank -%}
+                    <li class="list-social__item">
+                        <a href="{{ settings.social_twitter_link }}" class="link list-social__link" >
+                        {%- render 'icon-twitter' -%}
+                        <span class="visually-hidden">{{ 'general.social.links.twitter' | t }}</span>
+                        </a>
+                    </li>
+                {%- endif -%}
+                {%- if settings.social_facebook_link != blank -%}
+                    <li class="list-social__item">
+                        <a href="{{ settings.social_facebook_link }}" class="link list-social__link" >
+                        {%- render 'icon-facebook' -%}
+                        <span class="visually-hidden">{{ 'general.social.links.facebook' | t }}</span>
+                        </a>
+                    </li>
+                {%- endif -%}
+                {%- if settings.social_pinterest_link != blank -%}
+                    <li class="list-social__item">
+                        <a href="{{ settings.social_pinterest_link }}" class="link list-social__link" >
+                            {%- render 'icon-pinterest' -%}
+                            <span class="visually-hidden">{{ 'general.social.links.pinterest' | t }}</span>
+                        </a>
+                    </li>
+                {%- endif -%}
+                {%- if settings.social_instagram_link != blank -%}
+                    <li class="list-social__item">
+                        <a href="{{ settings.social_instagram_link }}" class="link list-social__link" >
+                            {%- render 'icon-instagram' -%}
+                            <span class="visually-hidden">{{ 'general.social.links.instagram' | t }}</span>
+                        </a>
+                    </li>
+                {%- endif -%}
+                {%- if settings.social_tiktok_link != blank -%}
+                    <li class="list-social__item">
+                        <a href="{{ settings.social_tiktok_link }}" class="link list-social__link" >
+                            {%- render 'icon-tiktok' -%}
+                            <span class="visually-hidden">{{ 'general.social.links.tiktok' | t }}</span>
+                        </a>
+                    </li>
+                {%- endif -%}
+                {%- if settings.social_tumblr_link != blank -%}
+                    <li class="list-social__item">
+                        <a href="{{ settings.social_tumblr_link }}" class="link list-social__link" >
+                            {%- render 'icon-tumblr' -%}
+                            <span class="visually-hidden">{{ 'general.social.links.tumblr' | t }}</span>
+                        </a>
+                    </li>
+                {%- endif -%}
+                {%- if settings.social_snapchat_link != blank -%}
+                    <li class="list-social__item">
+                        <a href="{{ settings.social_snapchat_link }}" class="link list-social__link" >
+                            {%- render 'icon-snapchat' -%}
+                            <span class="visually-hidden">{{ 'general.social.links.snapchat' | t }}</span>
+                        </a>
+                    </li>
+                {%- endif -%}
+                {%- if settings.social_youtube_link != blank -%}
+                    <li class="list-social__item">
+                        <a href="{{ settings.social_youtube_link }}" class="link list-social__link" >
+                            {%- render 'icon-youtube' -%}
+                            <span class="visually-hidden">{{ 'general.social.links.youtube' | t }}</span>
+                        </a>
+                    </li>
+                {%- endif -%}
+                {%- if settings.social_vimeo_link != blank -%}
+                    <li class="list-social__item">
+                        <a href="{{ settings.social_vimeo_link }}" class="link list-social__link" >
+                            {%- render 'icon-vimeo' -%}
+                            <span class="visually-hidden">{{ 'general.social.links.vimeo' | t }}</span>
+                        </a>
+                    </li>
+                {%- endif -%}
+              </ul>
+              {%- else -%}
               <share-button
                 id="Share-{{ section.id }}"
                 class="share-button quick-add-hidden"
@@ -524,7 +600,8 @@
                   </div>
                 </details>
               </share-button>
-              <script src="{{ 'share.js' | asset_url }}" defer="defer"></script>
+              <script src="{{ 'share.js' | asset_url }}" defer="defer"></script>  
+              {%- endif -%}
             {%- when 'variant_picker' -%}
               {%- unless product.has_only_default_variant -%}
                 {%- if block.settings.picker_type == 'button' -%}
@@ -568,6 +645,10 @@
                         <legend class="form__label">{{ option.name }}</legend>
                         {%- endif -%}
                         {%- for value in option.values -%}
+                          {%- liquid 
+                            assign color_ck = section.settings.color_ck | append:',color,Color,لون'
+                            assign get_color = color_ck | replace: ' ,', ',' | replace: ', ', ',' | split: ',' | uniq
+                            assign option_name = option.name | downcase -%}
                           <input
                             type="radio"
                             id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
@@ -578,7 +659,7 @@
                               checked
                             {% endif %}
                           >
-                          <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
+                          <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" class="{% if get_color contains option_name and block.settings.switch_style == 'custom' %}option_color bg_color_{{ value | handle }} lazyloadt4sed{% endif %}">
                             {{ value }}
                           </label>
                         {%- endfor -%}
@@ -1492,6 +1573,28 @@
           "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.label"
         },
         {
+          "type": "select",
+          "id": "switch_style",
+          "label": "颜色块样式",
+          "options": [
+            {
+              "value": "default",
+              "label": "默认"
+            },
+            {
+              "value": "custom",
+              "label": "颜色"
+            }
+          ],
+          "default": "default"
+        },
+        {
+          "type": "textarea",
+          "id": "color_ck",
+          "label": "颜色标题",
+          "info": "Eg: color,Color,لون"
+        },
+        {
           "type": "text",
           "id": "text",
           "default": "Pop-up link text",
@@ -1528,6 +1631,12 @@
       "name": "t:sections.main-product.blocks.share.name",
       "limit": 1,
       "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_social_icon",
+          "label": "展示社媒图标(不展示share按钮)",
+          "default": false
+        },
         {
           "type": "text",
           "id": "share_label",

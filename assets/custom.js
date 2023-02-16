@@ -86,7 +86,7 @@ function wishListRender() {
                 <div class="price  price--on-sale ">
                   <div class="price__container">
                     <div class="price__regular">
-                      <span class="price-item price-item--regular"> $9.99 USD </span>
+                      <span class="price-item price-item--regular"> ${price} </span>
                     </div>
                     <div class="price__sale">
                       <span class="price-item price-item--sale price-item--last"> ${price} </span>
