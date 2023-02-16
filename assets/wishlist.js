@@ -1,7 +1,8 @@
 function wishListRender() {
 	let localWishlist = localStorage.getItem('wishlist') != null && localStorage.getItem('wishlist') ? JSON.parse(localStorage.getItem('wishlist')) : [];
 
-	const hearts = document.querySelectorAll('.icon-heart');
+	const hearts = document.querySelectorAll('.add_to_wish');
+	console.log(hearts)
 	Array.prototype.map.call(hearts, function (item) {
 		if (localWishlist.length) {
 			localWishlist.map((product) => {
@@ -51,10 +52,8 @@ function wishListRender() {
 				</h3>
 			  </div>
 			  <wish-list class="card__badge top right card__wish" style="z-index: 2;">
-				<heart class="card__wish-item heart add_to_wish" data-handle="${product.handle}">
-					<svg class="icon-heart checked" aria-hidden="true" data-handle="${product.handle}">
-						<use xlink:href="#icon-Heart"></use>
-					</svg>
+				<heart class="card__wish-item">
+					<i class="iconfont icon-heart-fill card__wish-item heart add_to_wish checked" data-handle="${product.handle}"></i>
 				</heart>
 			  </wish-list>
 			</div>
@@ -82,13 +81,16 @@ function wishListRender() {
 						<span class="price-item price-item--sale price-item--last">
 							${price}
 						</span>
-						${ product.price_varies == false && product.compare_at_price_varies ? 
-							`<span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
+						${
+							product.price_varies == false && product.compare_at_price_varies
+								? `<span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
 							<span>
 								<s class="price-item price-item--regular" style="color: #7C7C46;">
 									${compare_at_price}
 								</s>
-							</span>` : ""}
+							</span>`
+								: ''
+						}
 					</div>
 				  </div>
 				</div>

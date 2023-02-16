@@ -1,9 +1,3 @@
-.icon-heart {
-    vertical-align: -0.15em;
-    fill: currentColor;
-    overflow: hidden;
-}
-
 .card__wish {
     display: flex;
     flex-direction: column;
@@ -20,13 +14,13 @@
     background-color: #fff;
 }
 
-.card__wish-item svg {
-    width: 1.4rem;
-    height: 1.4rem;
+.heart.add_to_wish {
+    color: #ccc;
 }
 
-.card__wish-item svg.checked {
-    fill: red;
+.add_to_wish.checked,
+i.icon-heart-fill.checked {
+    color: red;
 }
 
 .cart__footer .field:after .cart__footer .field:hover.field:after,

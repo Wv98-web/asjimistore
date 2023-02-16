@@ -3,9 +3,10 @@
     "d34aa208-e8d6-406e-ba8f-d53350019cc6": {
       "type": "image-banner",
       "settings": {
+        "image": "shopify:\/\/shop_images\/colored_gems_pic_33941f2e-bb1a-4c89-98c7-4c700324e579.jpg",
         "image_overlay_opacity": 0,
         "image_height": "small",
-        "adapt_height_first_image": true,
+        "adapt_height_first_image": false,
         "desktop_content_position": "middle-center",
         "show_text_box": true,
         "desktop_content_alignment": "center",

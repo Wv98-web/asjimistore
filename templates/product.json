@@ -33,19 +33,20 @@
         "a69fe9b8-861c-4000-9bd6-8005ffce45ac": {
           "type": "text_background",
           "settings": {
-            "text": "10% discount on the first order for new users.",
+            "text": "استخدم الرمز الترويجي \"NEW\" للحصول على خصم 10٪ على أول عملية شراء.",
             "text_style": "body",
             "bg": "#c7e1dd"
           }
         },
         "variant_picker": {
           "type": "variant_picker",
+          "disabled": true,
           "settings": {
             "picker_type": "button",
             "switch_style": "custom",
             "color_ck": "",
             "text": "Size guide",
-            "page": "{{ product.metafields.product.size_chart.value }}"
+            "page": ""
           }
         },
         "quantity_selector": {
@@ -102,7 +103,7 @@
           "type": "share",
           "settings": {
             "show_social_icon": true,
-            "share_label": "Share"
+            "share_label": "شارك مع"
           }
         },
         "aa4b571f-c03c-4455-9517-047408a6c310": {
@@ -183,18 +184,19 @@
         "template--17762998649124__3a3b1170-d4bb-4e95-8454-00e7609c2af1-16759136527f4b0c07-0": {
           "type": "description",
           "settings": {
-            "header": "Product Information",
-            "weight": "Weight",
-            "material": "Material",
-            "category": "Category",
-            "shipping_and_delivery": "Shipping and delivery",
-            "package_image": "Package image"
+            "header": "تفاصيل المنتج",
+            "weight": "وزن",
+            "material": "مواد",
+            "category": "فئة",
+            "shipping_and_delivery": "الشحن و التوصيل",
+            "package_image": "صورة العبوة"
           }
         },
         "template--17762998649124__3a3b1170-d4bb-4e95-8454-00e7609c2af1-16759136527f4b0c07-1": {
           "type": "social_share",
           "settings": {
-            "header": "Product Description",
+            "header": "وصف المنتج",
+            "show_social": false,
             "text": ""
           }
         },
@@ -209,7 +211,7 @@
         "ce26b288-7366-4802-bc96-263d99b69666"
       ],
       "settings": {
-        "reviews_header": "Customer Reviews",
+        "reviews_header": "آراء العملاء",
         "color_scheme": "background-1",
         "padding_top": 36,
         "padding_bottom": 36
@@ -221,25 +223,25 @@
         "template--17762998649124__878a2f1b-9123-4361-8c83-f4548eb90331-167583339458b44b0b-1": {
           "type": "shipping",
           "settings": {
-            "title": "Free Delivery"
+            "title": "التوصيل المجاني"
           }
         },
         "template--17762998649124__878a2f1b-9123-4361-8c83-f4548eb90331-167583339458b44b0b-0": {
           "type": "returns",
           "settings": {
-            "title": "7 Days Return"
+            "title": "عودة لمدة 7 أيام"
           }
         },
         "template--17762998649124__878a2f1b-9123-4361-8c83-f4548eb90331-167583339458b44b0b-3": {
           "type": "size",
           "settings": {
-            "title": "Exact Size"
+            "title": "الحجم الدقيق"
           }
         },
         "template--17762998649124__878a2f1b-9123-4361-8c83-f4548eb90331-167583339458b44b0b-2": {
           "type": "certified",
           "settings": {
-            "title": "Genuine Product"
+            "title": "منتج أصلي"
           }
         }
       },
@@ -303,6 +305,7 @@
     },
     "db4e7aba-ced4-4370-ad5a-57155fb06196": {
       "type": "image-with-text2",
+      "disabled": true,
       "blocks": {
         "template--17762998649124__db4e7aba-ced4-4370-ad5a-57155fb06196-1675929810196cbb8d-0": {
           "type": "heading",
@@ -348,7 +351,7 @@
     "product-recommendations": {
       "type": "product-recommendations",
       "settings": {
-        "heading": "You May Also Like",
+        "heading": "ربما يعجبك أيضا",
         "heading_size": "h2",
         "products_to_show": 4,
         "columns_desktop": 4,

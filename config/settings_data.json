@@ -114,7 +114,7 @@
           "announcement-bar-0": {
             "type": "announcement",
             "settings": {
-              "text": "10٪ خصم على أول طلب للمستخدمين الجدد.",
+              "text": "استخدم الرمز الترويجي \"NEW\" للحصول على خصم 10٪ على أول عملية شراء.",
               "text_alignment": "center",
               "color_scheme": "background-2",
               "link": ""
@@ -125,7 +125,8 @@
           "announcement-bar-0"
         ],
         "settings": {
-          "enable_language_selector": true
+          "enable_language_selector": true,
+          "enable_country_selector": false
         }
       },
       "header": {

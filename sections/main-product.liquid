@@ -441,6 +441,7 @@
                   {{ 'products.product.quantity.label' | t }}
                 </label>
 
+                <div style="display: flex; align-items: center; gap: 1rem;">
                 <quantity-input class="quantity">
                   <button class="quantity__button no-js-hidden" name="minus" type="button">
                     <span class="visually-hidden">
@@ -464,6 +465,13 @@
                     {% render 'icon-plus' %}
                   </button>
                 </quantity-input>
+
+                <wish-list class="card__wish">
+                  <heart class="card__wish-item" style="width: 3rem; height: 3rem;">
+                    <i class="iconfont icon-heart-fill card__wish-item heart add_to_wish" data-handle="{{ product.handle }}" style="font-size: 3rem;"></i>
+                  </heart>
+                </wish-list>
+                </div>
               </div>
             {%- when 'popup' -%}
               <modal-opener
