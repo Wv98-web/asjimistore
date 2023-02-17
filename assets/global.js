@@ -851,8 +851,21 @@ class VariantSelects extends HTMLElement {
         const price = document.getElementById(`price-${this.dataset.section}`);
 
         if (price) price.classList.remove('visibility-hidden');
+
+        const sku = document.getElementById(`sku-${this.dataset.section}`);
+
+        if (sku) sku.classList.remove('visibility-hidden'), this.updateSku(html);
+
         this.toggleAddButton(!this.currentVariant.available, window.variantStrings.soldOut);
       });
+  }
+
+  updateSku(html) {
+    const id = `sku-${this.dataset.section}`;
+    const destination = document.getElementById(id);
+    const source = html.getElementById(id);
+  
+    if (source && destination) destination.innerHTML = source.innerHTML;
   }
 
   toggleAddButton(disable = true, text, modifyClass = true) {
@@ -878,7 +891,9 @@ class VariantSelects extends HTMLElement {
     const addButton = button.querySelector('[name="add"]');
     const addButtonText = button.querySelector('[name="add"] > span');
     const price = document.getElementById(`price-${this.dataset.section}`);
+    const sku = document.getElementById(`sku-${this.dataset.section}`);
     if (!addButton) return;
+    if (sku) sku.classList.add('visibility-hidden');
     addButtonText.textContent = window.variantStrings.unavailable;
     if (price) price.classList.add('visibility-hidden');
   }

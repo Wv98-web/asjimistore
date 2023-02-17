@@ -11,6 +11,12 @@
             "text_style": "uppercase"
           }
         },
+        "b371f7be-f73f-4f51-a91d-c5cb32633a0b": {
+          "type": "sku",
+          "settings": {
+            "show_sku": true
+          }
+        },
         "title": {
           "type": "title",
           "settings": {}
@@ -40,7 +46,6 @@
         },
         "variant_picker": {
           "type": "variant_picker",
-          "disabled": true,
           "settings": {
             "picker_type": "button",
             "switch_style": "custom",
@@ -145,6 +150,7 @@
       },
       "block_order": [
         "vendor",
+        "b371f7be-f73f-4f51-a91d-c5cb32633a0b",
         "title",
         "caption",
         "price",

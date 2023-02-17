@@ -368,6 +368,14 @@
               >
                 {{- block.settings.text -}}
               </p>
+
+            {%- when 'sku' -%}
+              {% assign current_variant = product.selected_or_first_available_variant %}
+              <div id="sku-{{ section.id }}" class="no-js-hidden subtitle" role="status" {{ block.shopify_attributes }}> 
+                {% if product.selected_or_first_available_variant.sku != blank %}
+                  <p id="product-sku">{{ product.selected_or_first_available_variant.sku }} </p>
+                {% endif %}
+              </div>
             {% comment %} AR END {% endcomment %}
             {%- when 'text' -%}
               <p
@@ -1417,6 +1425,18 @@
   "blocks": [
     {
       "type": "@app"
+    },
+    {
+      "type": "sku",
+      "name": "Product sku",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_sku",
+          "label": "是否展示sku",
+          "default": true
+        }
+      ]
     },
     {
       "type": "text",
