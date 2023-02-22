@@ -178,7 +178,7 @@
         "hide_variants": true,
         "enable_video_looping": false,
         "size_ck": "",
-        "show_bg": true,
+        "show_bg": false,
         "product_bg": "shopify:\/\/shop_images\/8ea65ca09c3c2c35ef0a633d41ae1903.png",
         "padding_top": 36,
         "padding_bottom": 12
@@ -195,6 +195,7 @@
             "material": "مواد",
             "category": "فئة",
             "shipping_and_delivery": "الشحن و التوصيل",
+            "shipping_and_delivery_content": "<p>يمكن شحن الخدمات اللوجستية إلى المملكة العربية السعودية والإمارات العربية المتحدة والكويت. الشحن مجاني.<br\/><br\/>وقت التسليم المقدر في المملكة العربية السعودية هو 10-15 يومًا ؛<br\/>وقت التسليم المقدر للإمارات والكويت هو 7-10 أيام.<\/p>",
             "package_image": "صورة العبوة"
           }
         },

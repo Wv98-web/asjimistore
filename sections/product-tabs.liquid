@@ -151,19 +151,15 @@
     
                         {%- when 'description' -%}
                             <div class="tab-content__item tab-content__des active" {{ block.shopify_attributes }}>
-                                {%- if product.metafields.custom.weight != blank -%}
                                     <div class="grid">
                                         <div class="grid--header">{{ block.settings.weight }}:</div>
-                                        <div class="grid--content">{{ product.metafields.custom.weight }}</div>
+                                        <div class="grid--content">{{ product.selected_or_first_available_variant.weight | weight_with_unit }}</div>
                                     </div>
-                                {%- endif -%}
 
-                                {%- if product.metafields.product.material != blank -%}
                                     <div class="grid">
                                         <div class="grid--header">{{ block.settings.material }}:</div>
-                                        <div class="grid--content">{{ product.metafields.product.material }}</div>
+                                        <div class="grid--content">S925</div>
                                     </div>
-                                {%- endif -%}
 
                                 {%- if product.metafields.product.category != blank -%}
                                     <div class="grid">
@@ -172,10 +168,10 @@
                                     </div>
                                 {%- endif -%}
 
-                                {%- if product.metafields.product.shipping_and_delivery != blank -%}
-                                    <div class="grid">
+                                {%- if block.settings.shipping_and_delivery_content != blank -%}
+                                    <div class="flex">
                                         <div class="grid--header">{{ block.settings.shipping_and_delivery }}:</div>
-                                        <div class="grid--content">{{ product.metafields.product.shipping_and_delivery }}</div>
+                                        <div class="grid--content">{{ block.settings.shipping_and_delivery_content }}</div>
                                     </div>
                                 {%- endif -%}
 
@@ -331,6 +327,11 @@
                     "id": "shipping_and_delivery",
                     "label": "标题(物流与配送)",
                     "default": "Shipping and delivery"
+                },
+                {
+                    "type": "richtext",
+                    "id": "shipping_and_delivery_content",
+                    "label": "内容(物流与配送)"
                 },
                 {
                     "type": "text",

@@ -3,7 +3,7 @@
     "image_banner": {
       "type": "image-banner",
       "settings": {
-        "image": "shopify:\/\/shop_images\/318737428_6137369826294358_4039649916237732821_n.jpg",
+        "image": "shopify:\/\/shop_images\/banner.jpg",
         "image_overlay_opacity": 0,
         "image_height": "medium",
         "adapt_height_first_image": true,
@@ -112,6 +112,7 @@
     },
     "780fe252-7473-4ed0-8f01-ed88737cb1bf": {
       "type": "featured-collection-1",
+      "disabled": true,
       "settings": {
         "title": "بيع حار",
         "heading_size": "h2",
@@ -119,7 +120,7 @@
         "show_description": false,
         "description_style": "body",
         "collection": "test-collection-do-not-delete",
-        "products_to_show": 4,
+        "products_to_show": 8,
         "columns_desktop": 4,
         "full_width": false,
         "show_view_all": true,
@@ -145,7 +146,7 @@
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "test-collection-do-not-delete",
+        "collection": "new-in",
         "products_to_show": 4,
         "columns_desktop": 4,
         "full_width": false,
@@ -170,15 +171,15 @@
         "template--17762998452516__5ff99729-b560-4693-a24a-bf690b94e932-1675660229919b85fb-0": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/young-female-models-denim.jpg",
+            "image": "shopify:\/\/shop_images\/Women_website.jpg",
             "button_link": "shopify:\/\/collections\/women"
           }
         },
         "template--17762998452516__5ff99729-b560-4693-a24a-bf690b94e932-1675660229919b85fb-1": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/model-poses-casually-on-ride.jpg",
-            "button_link": ""
+            "image": "shopify:\/\/shop_images\/men_jewe.jpg",
+            "button_link": "shopify:\/\/collections\/men"
           }
         }
       },
