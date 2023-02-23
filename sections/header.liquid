@@ -242,6 +242,18 @@
                         {%- endif -%}
                       </li>
                     {%- endfor -%}
+                    <li style="background: rgba(var(--color-base-background-2), 0.2); border-top: 1px solid rgba(151, 151, 151, 0.1);">
+                      <a href="/pages/wishlist" class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if request.path == '/pages/wishlist' %} menu-drawer__menu-item--active{% endif %}"{% if link.current %} aria-current="page"{% endif %}>
+                        <svg class="icon-heart" aria-hidden="true" style="width: 2rem; height: 2rem; {% if shop.locale contains 'ar' %}margin-left: 1rem;{% else %}margin-right: 1rem;{% endif %}{% if request.path == '/pages/wishlist' %} fill: #fff;{% endif %}">
+                          <use xlink:href="#icon-Heart"></use>
+                        </svg>
+                        {%- if shop.locale contains 'ar' -%}
+                        قائمة الرغبات
+                        {%- else -%}
+                        Wishlist
+                        {%- endif -%}
+                      </a>
+                    </li>
                   </ul>
                   {%- else -%}
                   <ul class="menu-drawer__menu has-submenu list-menu" role="list">
@@ -330,7 +342,7 @@
                       -%}
                     </a>
                   {%- endif -%} {% endcomment %}
-                  <a href="/pages/wishlist" class="menu-drawer__account link focus-inset h5">
+                  {% comment %} <a href="/pages/wishlist" class="menu-drawer__account link focus-inset h5">
                     <svg class="icon-heart" aria-hidden="true" style="width: 2rem; height: 2rem; {% if shop.locale contains 'ar' %}margin-left: 1rem;{% else %}margin-right: 1rem;{% endif %}">
                       <use xlink:href="#icon-Heart"></use>
                     </svg>
@@ -339,7 +351,7 @@
                     {%- else -%}
                     Wishlist
                     {%- endif -%}
-                  </a>
+                  </a> {% endcomment %}
                   <ul class="list list-social list-unstyled" role="list">
                     {%- if settings.social_twitter_link != blank -%}
                       <li class="list-social__item">
@@ -1072,7 +1084,7 @@
         </a>
       {%- endif -%}
 
-      <a href="/pages/wishlist" class="header__icon header__icon--account link focus-inset">
+      <a href="/pages/wishlist" class="header__icon header__icon--account link focus-inset small-hide">
         <svg class="icon-heart" aria-hidden="true" style="width: 2.4rem; height: 2.4rem;">
           <use xlink:href="#icon-Heart"></use>
         </svg>
