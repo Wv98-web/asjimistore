@@ -76,12 +76,19 @@
       position: absolute;
       width: calc((100% - var(--page-width)) / 2);
       height: auto;
+      max-height: 100%;
       aspect-ratio: {{ section.settings.footer_bg.aspect_ratio }};
       left: 0;
       bottom: 0;
       background: url({{ section.settings.footer_bg | img_url: 'master' }});
       background-size: contain;
       background-repeat: no-repeat;
+    }
+  }  
+
+  @media screen and (min-width: 750px) {
+    .newsletter-form {
+      margin: 0 !important;
     }
   }
 
@@ -351,6 +358,8 @@
                           {%- endif -%}
                         {%- endform -%}
                       </div>
+                  
+                      {%- if block.settings.show_payment -%}
                       <div class="footer__payment">
                         <span class="visually-hidden">{{ 'sections.footer.payment' | t }}</span>
                         <ul class="list list-payment" role="list">
@@ -361,6 +370,7 @@
                           {%- endfor -%}
                         </ul>
                       </div>
+                      {%- endif -%}
                     </div>
                   {% comment %} AR END{% endcomment %}
                   {%- when 'text' -%}
@@ -454,6 +464,8 @@
                         {%- endif -%}
                       {%- endform -%}
                     </div>
+                
+                    {%- if block.settings.show_payment -%}
                     <div class="footer__payment">
                       <span class="visually-hidden">{{ 'sections.footer.payment' | t }}</span>
                       <ul class="list list-payment" role="list">
@@ -464,6 +476,7 @@
                         {%- endfor -%}
                       </ul>
                     </div>
+                    {%- endif -%}
                   </div>
                 {% comment %} AR END{% endcomment %}
                 {%- when 'text' -%}
@@ -832,6 +845,12 @@
           "default": "footer",
           "label": "t:sections.footer.blocks.link_list.settings.menu.label",
           "info": "t:sections.footer.blocks.link_list.settings.menu.info"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_payment",
+          "label": "是否展示支付方式",
+          "default": false
         }
       ]
     },

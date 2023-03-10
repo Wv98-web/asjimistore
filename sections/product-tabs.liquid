@@ -36,12 +36,12 @@
                             </li>
     
                         {% when 'social_share' %}
-                            <li class="tab-header__item" {{ block.shopify_attributes }}>
+                            <li class="tab-header__item active" {{ block.shopify_attributes }}>
                                 {{ block.settings.header }}
                             </li>
     
                         {% when 'description' %}
-                            <li class="tab-header__item active" {{ block.shopify_attributes }}>
+                            <li class="tab-header__item" {{ block.shopify_attributes }}>
                                 {{ block.settings.header }}
                             </li>
                             
@@ -62,7 +62,7 @@
                             </div>
     
                         {%- when 'social_share' -%}
-                            <div class="tab-content__item" {{ block.shopify_attributes }}>
+                            <div class="tab-content__item active" {{ block.shopify_attributes }}>
                                 {%- if product.description != blank -%}
                                 <div class="product__description rte quick-add-hidden" style="margin-bottom: 2rem;">
                                     {{ product.description }}
@@ -150,10 +150,10 @@
                             </div>
     
                         {%- when 'description' -%}
-                            <div class="tab-content__item tab-content__des active" {{ block.shopify_attributes }}>
+                            <div class="tab-content__item tab-content__des" {{ block.shopify_attributes }}>
                                     <div class="grid">
                                         <div class="grid--header">{{ block.settings.weight }}:</div>
-                                        <div class="grid--content">{{ product.selected_or_first_available_variant.weight | weight_with_unit }}</div>
+                                        <div class="grid--content">{{ product.selected_or_first_available_variant.weight_in_unit }}{{ product.selected_or_first_available_variant.weight_unit }}</div>
                                     </div>
 
                                     <div class="grid">

@@ -65,3 +65,20 @@ i.icon-heart-fill.checked {
     padding: 1rem !important;
     background-color: #fff;
 }
+
+@media screen and (min-width: 750px) {
+    .cart__ctas {
+        flex-direction: column;
+    }
+}
+
+.thumbnail[aria-current] {
+    box-shadow: 0 0 0 0.1rem #dcdccd !important;
+    border-color: #dcdccd !important;
+}
+
+@media screen and (max-width: 749px) {
+    .product__media-list .product__media-item {
+        width: calc(100% - 3rem) !important;
+    }
+}

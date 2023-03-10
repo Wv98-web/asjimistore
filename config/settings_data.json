@@ -15,7 +15,7 @@
     "heading_scale": 100,
     "type_body_font": "roboto_n4",
     "body_scale": 100,
-    "page_width": 1200,
+    "page_width": 1400,
     "spacing_sections": 0,
     "spacing_grid_horizontal": 40,
     "spacing_grid_vertical": 8,
@@ -51,6 +51,7 @@
     "card_shadow_horizontal_offset": 0,
     "card_shadow_vertical_offset": 4,
     "card_shadow_blur": 5,
+    "product_border_color": "#dcdccd",
     "collection_card_color_scheme": "background-1",
     "text_boxes_border_thickness": 0,
     "text_boxes_border_opacity": 10,
@@ -84,11 +85,11 @@
     "sale_badge_color_scheme": "accent-2",
     "sold_out_badge_color_scheme": "inverse",
     "accent_icons": "text",
-    "social_twitter_link": "https:\/\/twitter.com\/shopify",
-    "social_facebook_link": "https:\/\/facebook.com\/shopify",
-    "social_pinterest_link": "https:\/\/pinterest.com\/shopify",
-    "social_instagram_link": "http:\/\/instagram.com\/shopify",
-    "social_tiktok_link": "#",
+    "social_twitter_link": "",
+    "social_facebook_link": "https:\/\/www.facebook.com\/jamilahjewelry",
+    "social_pinterest_link": "",
+    "social_instagram_link": "https:\/\/www.instagram.com\/jamilah2023official\/",
+    "social_tiktok_link": "",
     "social_tumblr_link": "",
     "social_snapchat_link": "",
     "social_youtube_link": "",
@@ -96,8 +97,8 @@
     "predictive_search_enabled": true,
     "predictive_search_show_vendor": false,
     "predictive_search_show_price": true,
-    "favicon": "shopify:\/\/shop_images\/logo_150-125.png",
-    "currency_code_enabled": true,
+    "favicon": "shopify:\/\/shop_images\/fav3_e68191cc-bb43-438e-8f1f-44b10b08ac13.png",
+    "currency_code_enabled": false,
     "cart_type": "drawer",
     "show_vendor": false,
     "show_cart_note": true,
@@ -114,7 +115,7 @@
           "announcement-bar-0": {
             "type": "announcement",
             "settings": {
-              "text": "استخدم الرمز الترويجي \"NEW\" للحصول على خصم 10٪ على أول عملية شراء.",
+              "text": "استخدم كود الخصم \"\"NEW\"\" للحصول على خصم 10% في أول شراء",
               "text_alignment": "center",
               "color_scheme": "background-2",
               "link": ""
@@ -125,8 +126,8 @@
           "announcement-bar-0"
         ],
         "settings": {
-          "enable_language_selector": true,
-          "enable_country_selector": false
+          "enable_language_selector": false,
+          "enable_country_selector": true
         }
       },
       "header": {
@@ -143,7 +144,7 @@
           "enable_sticky_header": true,
           "mobile_logo_position": "center",
           "search_hot_list": "main-menu",
-          "search_collection": "test-collection-do-not-delete",
+          "search_collection": "new-in",
           "divide_image": "shopify:\/\/shop_images\/divide.png",
           "margin_bottom": 0,
           "padding_top": 20,
@@ -158,13 +159,14 @@
             "type": "email",
             "settings": {
               "heading": "اشترك في بريدنا الإلكتروني",
-              "menu": "footer"
+              "menu": "footer",
+              "show_payment": false
             }
           },
           "f0f02518-db2f-49b6-9aa6-9da795bce60c": {
             "type": "link_list",
             "settings": {
-              "heading": "من نحن",
+              "heading": "من نحن ؟",
               "menu": "link-list-1"
             }
           },
@@ -182,7 +184,7 @@
           "footer-0"
         ],
         "settings": {
-          "social_header": "منصة اجتماعية",
+          "social_header": "تابعنا على",
           "color_scheme": "background-2",
           "footer_bg": "shopify:\/\/shop_images\/664a570e5a4aa7ed7abb2b085e680ea1.png",
           "footer_bg_m": "shopify:\/\/shop_images\/about_us_banner.png",

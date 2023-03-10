@@ -2971,7 +2971,7 @@ details-disclosure > details {
     left: 0;
     width: 5rem;
     height: 100%;
-    background-image: url(https://cdn.shopify.com/s/files/1/0714/8617/7572/files/home-bg.png);
+    background-image: url(https://cdn.shopify.com/s/files/1/0714/8617/7572/files/257bf75cb2f92ec5abe8dcb5d6d4addf_209d085c-5afb-4ab9-a643-3c5ec9843315.png);
     background-repeat: repeat;
     background-size: contain;
     background-position: center;
@@ -2985,10 +2985,11 @@ details-disclosure > details {
     right: 0;
     width: 5rem;
     height: 100%;
-    background-image: url(https://cdn.shopify.com/s/files/1/0714/8617/7572/files/home-bg.png);
+    background-image: url(https://cdn.shopify.com/s/files/1/0714/8617/7572/files/257bf75cb2f92ec5abe8dcb5d6d4addf_209d085c-5afb-4ab9-a643-3c5ec9843315.png);
     background-repeat: repeat;
     background-size: contain;
     background-position: center;
     z-index: 1;
+    transform: rotate(180deg);
   }
 }

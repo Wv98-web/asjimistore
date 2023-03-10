@@ -60,4 +60,15 @@
 .collection-list-view-all {
   margin-top: 2rem;
 }
+
+.section-collection-list-square .collection-list-view-all .button {
+  background: rgb(var(--color-base-background-2));
+  color: rgb(var(--color-base-background-1));
+}
+
+.section-collection-list-square .collection-list-view-all .button:hover {
+  border: 1px solid rgb(var(--color-base-background-2));
+  background: rgb(var(--color-base-background-1));
+  color: rgb(var(--color-base-background-2));
+}
 /* AR END */

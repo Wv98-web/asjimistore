@@ -3,8 +3,8 @@
     "ece9f07e-817e-43a3-a205-ff227e507124": {
       "type": "banner-custom",
       "settings": {
-        "image": "shopify:\/\/shop_images\/2.jpg",
-        "mb_image": "shopify:\/\/shop_images\/m2.jpg",
+        "image": "shopify:\/\/shop_images\/pc.png",
+        "mb_image": "shopify:\/\/shop_images\/M-banner.png",
         "image_overlay_opacity": 0,
         "image_height": "medium",
         "adapt_height_first_image": true,
@@ -26,10 +26,10 @@
             "collection": "earrings"
           }
         },
-        "d95dbfff-03a4-4c3e-9265-fedc55ea8515": {
+        "template--17762998452516__8ef39932-4e8d-497b-98dc-d8d18fe1c824-1675650557f769b4b6-3": {
           "type": "featured_collection",
           "settings": {
-            "collection": "قلادة"
+            "collection": "bracelets"
           }
         },
         "template--17762998452516__8ef39932-4e8d-497b-98dc-d8d18fe1c824-1675650557f769b4b6-1": {
@@ -38,32 +38,40 @@
             "collection": "rings"
           }
         },
-        "template--17762998452516__8ef39932-4e8d-497b-98dc-d8d18fe1c824-1675650557f769b4b6-3": {
+        "d95dbfff-03a4-4c3e-9265-fedc55ea8515": {
           "type": "featured_collection",
           "settings": {
-            "collection": "bracelets"
+            "collection": "قلادة"
           }
         },
         "template--17762998452516__8ef39932-4e8d-497b-98dc-d8d18fe1c824-1675650557f769b4b6-0": {
           "type": "featured_collection",
           "settings": {
-            "collection": "jewelry-sets"
+            "collection": "مجموعات-المجوهرات"
+          }
+        },
+        "dae3773f-281c-4c2a-99e3-e550ea018cfb": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "بروشات"
           }
         }
       },
       "block_order": [
         "template--17762998452516__8ef39932-4e8d-497b-98dc-d8d18fe1c824-1675650557f769b4b6-2",
-        "d95dbfff-03a4-4c3e-9265-fedc55ea8515",
-        "template--17762998452516__8ef39932-4e8d-497b-98dc-d8d18fe1c824-1675650557f769b4b6-1",
         "template--17762998452516__8ef39932-4e8d-497b-98dc-d8d18fe1c824-1675650557f769b4b6-3",
-        "template--17762998452516__8ef39932-4e8d-497b-98dc-d8d18fe1c824-1675650557f769b4b6-0"
+        "template--17762998452516__8ef39932-4e8d-497b-98dc-d8d18fe1c824-1675650557f769b4b6-1",
+        "d95dbfff-03a4-4c3e-9265-fedc55ea8515",
+        "template--17762998452516__8ef39932-4e8d-497b-98dc-d8d18fe1c824-1675650557f769b4b6-0",
+        "dae3773f-281c-4c2a-99e3-e550ea018cfb"
       ],
       "settings": {
-        "title": "فئة المنتج",
+        "title": "التصنيفات",
         "heading_size": "h2",
         "image_ratio": "square",
-        "columns_desktop": 5,
+        "columns_desktop": 6,
         "color_scheme": "background-1",
+        "text_color": "#26ac97",
         "show_view_all": false,
         "columns_mobile": "2",
         "swipe_on_mobile": false,
@@ -92,16 +100,22 @@
             "collection": "blue-gem"
           }
         },
-        "54413053-9dc2-41ad-afd5-474b2435a566": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "الأحجار-الكريمة-الوردية"
-          }
-        },
         "template--17762998452516__f04dede5-e882-4c8e-9cf8-215cda59b194-16756520944cb0db8e-0": {
           "type": "featured_collection",
           "settings": {
             "collection": "red-gem"
+          }
+        },
+        "f3012e2e-4dc9-4cbf-98ed-93a804d3b32c": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "كريستال"
+          }
+        },
+        "54413053-9dc2-41ad-afd5-474b2435a566": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "الأحجار-الكريمة-الوردية"
           }
         }
       },
@@ -109,14 +123,16 @@
         "template--17762998452516__f04dede5-e882-4c8e-9cf8-215cda59b194-16756520944cb0db8e-2",
         "8129e266-585a-473f-b983-556eba9b7943",
         "template--17762998452516__f04dede5-e882-4c8e-9cf8-215cda59b194-16756520944cb0db8e-1",
-        "54413053-9dc2-41ad-afd5-474b2435a566",
-        "template--17762998452516__f04dede5-e882-4c8e-9cf8-215cda59b194-16756520944cb0db8e-0"
+        "template--17762998452516__f04dede5-e882-4c8e-9cf8-215cda59b194-16756520944cb0db8e-0",
+        "f3012e2e-4dc9-4cbf-98ed-93a804d3b32c",
+        "54413053-9dc2-41ad-afd5-474b2435a566"
       ],
       "settings": {
-        "title": "تصنيف الأحجار الكريمة الملونة",
+        "title": "أحجار كريمة ملونة",
         "heading_size": "h2",
         "image_ratio": "square",
-        "columns_desktop": 5,
+        "show_border": false,
+        "columns_desktop": 6,
         "color_scheme": "background-1",
         "show_view_all": true,
         "columns_mobile": "2",
@@ -128,7 +144,7 @@
     "6af3641d-7bbb-4127-aef8-7ed1cb49b348": {
       "type": "featured-collection-1",
       "settings": {
-        "title": "الجديد في",
+        "title": "المنتج الجديد",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
@@ -138,11 +154,11 @@
         "columns_desktop": 4,
         "full_width": false,
         "show_view_all": true,
-        "view_all_style": "outline",
+        "view_all_style": "solid",
         "enable_desktop_slider": false,
         "color_scheme": "background-1",
         "image_ratio": "square",
-        "show_secondary_image": false,
+        "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": true,
@@ -155,24 +171,24 @@
     "5ff99729-b560-4693-a24a-bf690b94e932": {
       "type": "image-with-image",
       "blocks": {
-        "template--17762998452516__5ff99729-b560-4693-a24a-bf690b94e932-1675660229919b85fb-0": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Women_website.jpg",
-            "button_link": "shopify:\/\/collections\/women"
-          }
-        },
         "template--17762998452516__5ff99729-b560-4693-a24a-bf690b94e932-1675660229919b85fb-1": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/men_jewe.jpg",
+            "image": "shopify:\/\/shop_images\/Men.png",
             "button_link": "shopify:\/\/collections\/men"
+          }
+        },
+        "template--17762998452516__5ff99729-b560-4693-a24a-bf690b94e932-1675660229919b85fb-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/WOMEN.png",
+            "button_link": "shopify:\/\/collections\/women"
           }
         }
       },
       "block_order": [
-        "template--17762998452516__5ff99729-b560-4693-a24a-bf690b94e932-1675660229919b85fb-0",
-        "template--17762998452516__5ff99729-b560-4693-a24a-bf690b94e932-1675660229919b85fb-1"
+        "template--17762998452516__5ff99729-b560-4693-a24a-bf690b94e932-1675660229919b85fb-1",
+        "template--17762998452516__5ff99729-b560-4693-a24a-bf690b94e932-1675660229919b85fb-0"
       ],
       "settings": {
         "height": "adapt",
@@ -204,13 +220,13 @@
         "template--17762998452516__72d31c71-38e6-4e38-9dac-9439877ec888-16756649858e538d4d-2": {
           "type": "certified",
           "settings": {
-            "title": "منتج أصلي"
+            "title": "صنع يدويا"
           }
         },
         "template--17762998452516__72d31c71-38e6-4e38-9dac-9439877ec888-16756649858e538d4d-0": {
           "type": "returns",
           "settings": {
-            "title": "عودة لمدة 7 أيام"
+            "title": "الاستبدال والارجاع لمدة 7 أيام"
           }
         }
       },

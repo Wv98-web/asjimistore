@@ -593,6 +593,18 @@
         "unit": "px",
         "label": "t:settings_schema.global.settings.blur.label",
         "default": 0
+      },
+      {
+        "type": "checkbox",
+        "id": "show_product_border",
+        "label": "是否展示产品边框",
+        "default": true
+      },
+      {
+        "type": "color",
+        "id": "product_border_color",
+        "label": "产品边框颜色",
+        "default": "#DCDCCD"
       }
     ]
   },

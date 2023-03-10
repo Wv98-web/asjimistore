@@ -1,7 +1,7 @@
 {
   "sections": {
-    "24efb9d7-579f-4b6e-b237-ff17067b5ea0": {
-      "type": "image-banner",
+    "e67b72d7-e4ad-46ee-862a-8ebea1dce155": {
+      "type": "banner-custom",
       "settings": {
         "image": "shopify:\/\/shop_images\/about_us.png",
         "image_overlay_opacity": 0,
@@ -164,7 +164,7 @@
     }
   },
   "order": [
-    "24efb9d7-579f-4b6e-b237-ff17067b5ea0",
+    "e67b72d7-e4ad-46ee-862a-8ebea1dce155",
     "main",
     "8832c16d-c682-406d-bee9-20100fea1d7e",
     "50e08a27-bfd1-4e9b-93bd-277cdddbd8f0",

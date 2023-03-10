@@ -340,6 +340,9 @@ class MenuDrawer extends HTMLElement {
   openMenuDrawer(summaryElement) {
     setTimeout(() => {
       this.mainDetailsToggle.classList.add('menu-opening');
+      this.mainDetailsToggle.querySelectorAll('.custom-facets').forEach(facets => {
+        facets.setAttribute('open', true)
+      })
     });
     summaryElement.setAttribute('aria-expanded', true);
     trapFocus(this.mainDetailsToggle, summaryElement);

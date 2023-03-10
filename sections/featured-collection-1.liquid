@@ -45,6 +45,17 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  .featured_collection_custom .collection__view-all .button {
+    background: rgb(var(--color-base-background-2));
+    color: rgb(var(--color-base-background-1));
+  }
+
+  .featured_collection_custom .collection__view-all .button:hover {
+    border: 1px solid rgb(var(--color-base-background-2));
+    background: rgb(var(--color-base-background-1));
+    color: rgb(var(--color-base-background-2));
+  }
 {%- endstyle -%}
 
 {%- liquid
@@ -131,7 +142,7 @@
 {
   "name": "特色分类(版本1)",
   "tag": "section",
-  "class": "section",
+  "class": "section featured_collection_custom",
   "settings": [
     {
       "type": "text",

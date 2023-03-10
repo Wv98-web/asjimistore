@@ -65,7 +65,7 @@
         -%}
         {%- for block in section.blocks -%}
           <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="collection-list__item grid__item{% if show_mobile_slider %} slider__slide{% endif %}{% if block.settings.collection.featured_image == nil %} collection-list__item--no-media{% endif %}" {{ block.shopify_attributes }}>
-            {% render 'card-collection-round', card_collection: block.settings.collection , media_aspect_ratio: section.settings.image_ratio, columns: columns %}
+            {% render 'card-collection-round', card_collection: block.settings.collection , media_aspect_ratio: section.settings.image_ratio, columns: columns, text_color: section.settings.text_color %}
           </li>
         {%- endfor -%}
       </ul>
@@ -149,7 +149,7 @@
       "type": "range",
       "id": "columns_desktop",
       "min": 1,
-      "max": 5,
+      "max": 6,
       "step": 1,
       "default": 3,
       "label": "t:sections.collection-list.settings.columns_desktop.label"
@@ -182,6 +182,12 @@
       "default": "background-1",
       "label": "t:sections.all.colors.label",
       "info": "t:sections.all.colors.has_cards_info"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "文字颜色",
+      "default": "#26AC97"
     },
     {
       "type": "checkbox",
