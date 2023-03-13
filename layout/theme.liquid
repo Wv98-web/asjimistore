@@ -374,5 +374,17 @@
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
     {{ 'doubly.js' | asset_url | script_tag }}
+
+    <script>
+      window.onload=function(){
+        $('.option.notranslate').map((index,item)=> {
+          $(item).contents().filter(function() {
+            return this.nodeType === 3; 
+          }).remove()
+          
+          $(item).find('.flags').after($(item).attr('data-value'));
+        })
+      }
+    </script>
   </body>
 </html>

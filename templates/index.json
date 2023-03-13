@@ -3,8 +3,8 @@
     "ece9f07e-817e-43a3-a205-ff227e507124": {
       "type": "banner-custom",
       "settings": {
-        "image": "shopify:\/\/shop_images\/pc.png",
-        "mb_image": "shopify:\/\/shop_images\/M-banner.png",
+        "image": "shopify:\/\/shop_images\/PC_banner.png",
+        "mb_image": "shopify:\/\/shop_images\/8f28a3491034113e64cfe797908a4383.png",
         "image_overlay_opacity": 0,
         "image_height": "medium",
         "adapt_height_first_image": true,
@@ -20,28 +20,28 @@
     "8ef39932-4e8d-497b-98dc-d8d18fe1c824": {
       "type": "collection-list-round",
       "blocks": {
-        "template--17762998452516__8ef39932-4e8d-497b-98dc-d8d18fe1c824-1675650557f769b4b6-2": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "earrings"
-          }
-        },
         "template--17762998452516__8ef39932-4e8d-497b-98dc-d8d18fe1c824-1675650557f769b4b6-3": {
           "type": "featured_collection",
           "settings": {
             "collection": "bracelets"
           }
         },
-        "template--17762998452516__8ef39932-4e8d-497b-98dc-d8d18fe1c824-1675650557f769b4b6-1": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "rings"
-          }
-        },
         "d95dbfff-03a4-4c3e-9265-fedc55ea8515": {
           "type": "featured_collection",
           "settings": {
             "collection": "قلادة"
+          }
+        },
+        "template--17762998452516__8ef39932-4e8d-497b-98dc-d8d18fe1c824-1675650557f769b4b6-2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "earrings"
+          }
+        },
+        "template--17762998452516__8ef39932-4e8d-497b-98dc-d8d18fe1c824-1675650557f769b4b6-1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "rings"
           }
         },
         "template--17762998452516__8ef39932-4e8d-497b-98dc-d8d18fe1c824-1675650557f769b4b6-0": {
@@ -58,10 +58,10 @@
         }
       },
       "block_order": [
-        "template--17762998452516__8ef39932-4e8d-497b-98dc-d8d18fe1c824-1675650557f769b4b6-2",
         "template--17762998452516__8ef39932-4e8d-497b-98dc-d8d18fe1c824-1675650557f769b4b6-3",
-        "template--17762998452516__8ef39932-4e8d-497b-98dc-d8d18fe1c824-1675650557f769b4b6-1",
         "d95dbfff-03a4-4c3e-9265-fedc55ea8515",
+        "template--17762998452516__8ef39932-4e8d-497b-98dc-d8d18fe1c824-1675650557f769b4b6-2",
+        "template--17762998452516__8ef39932-4e8d-497b-98dc-d8d18fe1c824-1675650557f769b4b6-1",
         "template--17762998452516__8ef39932-4e8d-497b-98dc-d8d18fe1c824-1675650557f769b4b6-0",
         "dae3773f-281c-4c2a-99e3-e550ea018cfb"
       ],
@@ -88,10 +88,10 @@
             "collection": "green-gem"
           }
         },
-        "8129e266-585a-473f-b983-556eba9b7943": {
+        "54413053-9dc2-41ad-afd5-474b2435a566": {
           "type": "featured_collection",
           "settings": {
-            "collection": "red-gemstone"
+            "collection": "الأحجار-الكريمة-الوردية"
           }
         },
         "template--17762998452516__f04dede5-e882-4c8e-9cf8-215cda59b194-16756520944cb0db8e-1": {
@@ -100,10 +100,10 @@
             "collection": "blue-gem"
           }
         },
-        "template--17762998452516__f04dede5-e882-4c8e-9cf8-215cda59b194-16756520944cb0db8e-0": {
+        "8129e266-585a-473f-b983-556eba9b7943": {
           "type": "featured_collection",
           "settings": {
-            "collection": "red-gem"
+            "collection": "red-gemstone"
           }
         },
         "f3012e2e-4dc9-4cbf-98ed-93a804d3b32c": {
@@ -112,20 +112,20 @@
             "collection": "كريستال"
           }
         },
-        "54413053-9dc2-41ad-afd5-474b2435a566": {
+        "template--17762998452516__f04dede5-e882-4c8e-9cf8-215cda59b194-16756520944cb0db8e-0": {
           "type": "featured_collection",
           "settings": {
-            "collection": "الأحجار-الكريمة-الوردية"
+            "collection": "red-gem"
           }
         }
       },
       "block_order": [
         "template--17762998452516__f04dede5-e882-4c8e-9cf8-215cda59b194-16756520944cb0db8e-2",
-        "8129e266-585a-473f-b983-556eba9b7943",
+        "54413053-9dc2-41ad-afd5-474b2435a566",
         "template--17762998452516__f04dede5-e882-4c8e-9cf8-215cda59b194-16756520944cb0db8e-1",
-        "template--17762998452516__f04dede5-e882-4c8e-9cf8-215cda59b194-16756520944cb0db8e-0",
+        "8129e266-585a-473f-b983-556eba9b7943",
         "f3012e2e-4dc9-4cbf-98ed-93a804d3b32c",
-        "54413053-9dc2-41ad-afd5-474b2435a566"
+        "template--17762998452516__f04dede5-e882-4c8e-9cf8-215cda59b194-16756520944cb0db8e-0"
       ],
       "settings": {
         "title": "أحجار كريمة ملونة",

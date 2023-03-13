@@ -43,7 +43,7 @@
     <div class="card__inner {% if card_style == 'standard' %}color-{{ card_color_scheme }} gradient{% endif %}{% if card_collection.featured_image or card_style == 'standard' %} ratio{% endif %}" style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;">
       {%- if card_collection.featured_image -%}
         <div class="card__media">
-          <div class="media media--transparent media--hover-effect" style="border-radius: 50%;">
+          <div class="media media--transparent media--hover-effect">
             <img
               srcset="{%- if card_collection.featured_image.width >= 165 -%}{{ card_collection.featured_image | image_url: width: 165 }} 165w,{%- endif -%}
                 {%- if card_collection.featured_image.width >= 330 -%}{{ card_collection.featured_image | image_url: width: 330 }} 330w,{%- endif -%}
@@ -124,14 +124,14 @@
 
 .section-collection-list-round .card .card__inner ,
 .section-collection-list-round .card-wrapper .card__inner {
-  border-radius: 50%;
-  border: 1px solid #26AC97;
+  /* border-radius: 50%; */
+  border: 1px solid #DCDCCD;
 }
 
-@media screen and (min-width: 990px) {
+/* @media screen and (min-width: 990px) {
   .section-collection-list-round .card:hover .card__inner ,
   .section-collection-list-round .card-wrapper:hover .card__inner {
     border: 1px dashed #EF422B;
   }
-}
+} */
 {% endstyle %}

@@ -5,9 +5,9 @@
     line-height: 40px!important;
 }
 
-.currency-selector .flags {
+/* .currency-selector .flags {
     display: none;
-}
+} */
 
 .currency-selector .doubly-nice-select.right .list {
   	overflow: hidden!important;
